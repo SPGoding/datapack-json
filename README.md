@@ -14,15 +14,13 @@
 0. 战利品表
 0. 配方
 
-# 协议
-# License
+# 协议 - License
 
 本项目以 [CC BY 4.0 协议](https://creativecommons.org/licenses/by/4.0/deed.zh) 进行发布。
 
-This work is released under a [CC BY 4.0 协议](https://creativecommons.org/licenses/by/4.0)
+This work is released under a [CC BY 4.0 license](https://creativecommons.org/licenses/by/4.0)
 
-# 基于
-# Based On
+# 基于 - Based On
 
 本项目基于以 [CC BY 4.0 协议](https://creativecommons.org/licenses/by/4.0/deed.zh)发布的 [Levertion/minecraft-json-schemas](https://github.com/Levertion/minecraft-json-schemas) 项目，作者 [@Levertion](https://github.com/Levertion)。其中所有的英文 `title` 与 `description` 被翻译为了简体中文。
 
