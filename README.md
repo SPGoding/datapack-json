@@ -17,9 +17,9 @@
 # 协议
 # License
 
-本项目以 [CC BY-NC-SA 4.0 协议](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh) 进行发布。
+本项目以 [CC BY 4.0 协议](https://creativecommons.org/licenses/by/4.0/deed.zh) 进行发布。
 
-This work is released under a [CC BY-NC-SA 4.0 协议](https://creativecommons.org/licenses/by-nc-sa/4.0)
+This work is released under a [CC BY 4.0 协议](https://creativecommons.org/licenses/by/4.0)
 
 # 基于
 # Based On
