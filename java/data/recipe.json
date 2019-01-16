@@ -1,0 +1,225 @@
+{
+    "$comment": "Some descriptions in this file are from https://github.com/skylinerw/guides/blob/master/java/recipes.md",
+    "$schema": "http://json-schema.org/schema#",
+    "$id": "https://raw.githubusercontent.com/Levertion/minecraft-json-schemas/master/java/data/recipe.json",
+    "type": "object",
+    "title": "根标签。",
+    "properties": {
+        "type": {
+            "title": "合成配方的种类。"
+        },
+        "group": {
+            "type": "string",
+            "title": "识别器。用于将多个配方在配方书中分组。"
+        }
+    },
+    "oneOf": [
+        {
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "enum": [
+                        "crafting_shaped"
+                    ],
+                    "description": "用于有序合成的配方。"
+                },
+                "group": {},
+                "pattern": {
+                    "type": "array",
+                    "title": "有序合成时物品应该被摆放的形状。该列表下每一个字符串表示工作台界面里的一行，共三个字符串。",
+                    "minItems": 1,
+                    "maxItems": 3,
+                    "items": {
+                        "type": "string",
+                        "pattern": "^.{1,3}$"
+                    }
+                },
+                "key": {
+                    "type": "object",
+                    "title": "所有用于有序合成配方的标识符。",
+                    "minItems": 0,
+                    "maxItems": 9,
+                    "additionalProperties": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/input",
+                                "description": "该标识符表示的物品。"
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/definitions/input"
+                                },
+                                "description": "该标识符所能表示的所有物品。"
+                            }
+                        ]
+                    },
+                    "propertyNames": {
+                        "type": "string",
+                        "pattern": "^.$"
+                    }
+                },
+                "result": {
+                    "$ref": "#/definitions/craft_result"
+                }
+            },
+            "required": [
+                "pattern",
+                "key",
+                "result"
+            ]
+        },
+        {
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "enum": [
+                        "crafting_shapeless"
+                    ],
+                    "description": "用于无序合成的配方。"
+                },
+                "group": {},
+                "ingredients": {
+                    "type": "array",
+                    "title": "一系列的合成原料。",
+                    "minItems": 0,
+                    "maxItems": 9,
+                    "items": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/definitions/input",
+                                "description": "一个原料。"
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/definitions/input"
+                                },
+                                "description": "一系列可以相互替代的原料。"
+                            }
+                        ]
+                    }
+                },
+                "result": {
+                    "$ref": "#/definitions/craft_result"
+                }
+            },
+            "required": [
+                "ingredients",
+                "result"
+            ]
+        },
+        {
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "oneOf": [
+                        {
+                            "enum": [
+                                "blasting"
+                            ],
+                            "description": "用于高炉的配方。"
+                        },
+                        {
+                            "enum": [
+                                "campfire"
+                            ],
+                            "description": "用于篝火的配方。"
+                        },
+                        {
+                            "enum": [
+                                "smelting"
+                            ],
+                            "description": "用于熔炉的配方。"
+                        },
+                        {
+                            "enum": [
+                                "smoking"
+                            ],
+                            "description": "用于熏肉机的配方。"
+                        }
+                    ]
+                },
+                "group": {},
+                "ingredient": {
+                    "oneOf": [
+                        {
+                            "$ref": "#/definitions/input",
+                            "title": "一个输入原料。"
+                        },
+                        {
+                            "type": "array",
+                            "title": "一系列可行的输入原料。",
+                            "items": {
+                                "$ref": "#/definitions/input"
+                            }
+                        }
+                    ]
+                },
+                "result": {
+                    "$ref": "../shared/item_name.json",
+                    "title": "输出物品。"
+                },
+                "experience": {
+                    "type": "number",
+                    "title": "给予玩家的经验。"
+                },
+                "cookingtime": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "title": "以刻（tick）为单位的熔炼时间。"
+                }
+            },
+            "required": [
+                "ingredient",
+                "result"
+            ]
+        }
+    ],
+    "definitions": {
+        "input": {
+            "type": "object",
+            "oneOf": [
+                {
+                    "additionalProperties": false,
+                    "properties": {
+                        "item": {
+                            "$ref": "../shared/item_name.json",
+                            "title": "输入物品的 ID。"
+                        }
+                    }
+                },
+                {
+                    "additionalProperties": false,
+                    "properties": {
+                        "tag": {
+                            "$ref": "../shared/resource_location.json",
+                            "title": "一个数据包物品标签。",
+                            "description": "所有定义在该标签内的物品都可作为输入。"
+                        }
+                    }
+                }
+            ]
+        },
+        "craft_result": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "item": {
+                    "$ref": "../shared/item_name.json",
+                    "title": "输出物品的 ID。"
+                },
+                "count": {
+                    "type": "integer",
+                    "title": "输出物品的数量。"
+                }
+            },
+            "required": [
+                "item"
+            ]
+        }
+    },
+    "required": [
+        "type"
+    ]
+}

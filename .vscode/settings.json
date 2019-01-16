@@ -1,0 +1,39 @@
+{
+    "json.schemas": [
+        {
+            "fileMatch": ["/playground/text_component/*.json"],
+            "url": "/java/shared/text_component.json"
+        },
+        {
+            "fileMatch": ["/playground/advancements/*.json"],
+            "url": "/java/data/advancement.json"
+        },
+        {
+            "fileMatch": ["/playground/loot_tables/*.json"],
+            "url": "/java/data/loot_table.json"
+        },
+        {
+            "fileMatch": ["/playground/recipes/*.json"],
+            "url": "/java/data/recipe.json"
+        },
+        {
+            "fileMatch": ["/playground/tags/blocks/*.json"],
+            "url": "/java/data/tags/block.json"
+        },
+        {
+            "fileMatch": ["/playground/tags/items/*.json"],
+            "url": "/java/data/tags/item.json"
+        },
+        {
+            "fileMatch": ["/playground/tags/functions/*.json"],
+            "url": "/java/data/tags/function.json"
+        },
+        {
+            "fileMatch": ["/playground/tags/fluids/*.json"],
+            "url": "/java/data/tags/fluid.json"
+        }
+    ],
+    "files.associations": {
+        "*.mcmeta": "json"
+    }
+}
