@@ -1,18 +1,29 @@
 # minecraft-json-schema-zh_CN
 
+已更新至：Minecraft JE 19w13b
+
 针对 Minecraft 中多种 JSON 文件的 [JSON schema](http://json-schema.org/)。
 
 ## 设计规范
 
-- 凡是能够显示指定 `minecraft:` 命名空间的字段，必须指定，不能省略。
-- 在编写 `title` 与 `description` 时，请以全角句号（`。`）结尾。
+-   凡是能够显示指定 `minecraft:` 命名空间的字段，必须指定，不能省略。
+-   在编写 `title` 与 `description` 时，请以全角句号（`。`）结尾。
 
 ## 支持特性
 
 0. `pack.mcmeta`
-0. 进度
-0. 战利品表
-0. 配方
+1. 进度
+1. 战利品表
+1. 配方
+
+## shared 更新方法
+
+将 data generator 生成的 `reports/registries.json` 放置在 `./scripts` 中，然后在终端运行命令
+
+```BAT
+cd ./scripts
+node convert.js
+```
 
 # 协议 - License
 
