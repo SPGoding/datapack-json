@@ -5,6 +5,22 @@
             "url": "/java/shared/text_component.json"
         },
         {
+            "fileMatch": ["/playground/animation/*.mcmeta"],
+            "url": "/java/assets/animation.mcmeta.json"
+        },
+        {
+            "fileMatch": ["/playground/blockstates/*.json"],
+            "url": "/java/assets/blockstates.json"
+        },
+        {
+            "fileMatch": ["/playground/model/*.json"],
+            "url": "/java/assets/model.json"
+        },
+        {
+            "fileMatch": ["/playground/sounds/*.json"],
+            "url": "/java/assets/sounds.json"
+        },
+        {
             "fileMatch": ["/playground/advancements/*.json"],
             "url": "/java/data/advancement.json"
         },
@@ -21,6 +37,10 @@
             "url": "/java/data/tags/block.json"
         },
         {
+            "fileMatch": ["/playground/tags/entity_types/*.json"],
+            "url": "/java/data/tags/entity_type.json"
+        },
+        {
             "fileMatch": ["/playground/tags/items/*.json"],
             "url": "/java/data/tags/item.json"
         },
@@ -31,6 +51,10 @@
         {
             "fileMatch": ["/playground/tags/fluids/*.json"],
             "url": "/java/data/tags/fluid.json"
+        },
+        {
+            "fileMatch": ["/playground/resource-pack-mcmeta/*.mcmeta"],
+            "url": "/java/assets/pack.mcmeta.json"
         }
     ],
     "files.associations": {
