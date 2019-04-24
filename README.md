@@ -1,6 +1,6 @@
 # minecraft-json-schema-zh_CN
 
-已更新至：Minecraft JE 19w13b
+已更新至：Minecraft Java版 1.14
 
 针对 Minecraft 中多种 JSON 文件的 [JSON schema](http://json-schema.org/)。
 
