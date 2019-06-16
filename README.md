@@ -7,7 +7,7 @@
 
 针对 Minecraft 中多种 JSON 文件的 [JSON schema](http://json-schema.org/)。配合现代编辑器，可以实现在书写 JSON 时提供自动补全，并自动校验格式。
 
-![](asd.jpg)
+![](https://i.loli.net/2019/06/16/5d05be6ce9ed297423.gif)
 
 ## 设计规范
 
