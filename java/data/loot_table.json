@@ -43,7 +43,7 @@
                     },
                     "conditions": {
                         "$ref": "#/definitions/conditions",
-                        "title": "随机池条件、",
+                        "title": "随机池条件。",
                         "description": "The conditions which must pass in order for this pool to be used"
                     },
                     "rolls": {
@@ -346,13 +346,15 @@
             ],
             "properties": {
                 "conditions": {
-                    "$ref": "#/definitions/conditions"
+                    "$ref": "#/definitions/conditions",
+                    "title": "函数执行的条件。"
                 }
             },
             "oneOf": [
                 {
                     "additionalProperties": false,
                     "properties": {
+                        "conditions": {},
                         "function": {
                             "enum": [
                                 "minecraft:set_count"
@@ -368,6 +370,7 @@
                 {
                     "additionalProperties": false,
                     "properties": {
+                        "conditions": {},
                         "function": {
                             "enum": [
                                 "minecraft:set_damage"
@@ -383,6 +386,7 @@
                 {
                     "additionalProperties": false,
                     "properties": {
+                        "conditions": {},
                         "function": {
                             "enum": [
                                 "minecraft:set_nbt"
@@ -399,6 +403,7 @@
                 {
                     "additionalProperties": false,
                     "properties": {
+                        "conditions": {},
                         "function": {
                             "enum": [
                                 "minecraft:set_attributes"
@@ -490,6 +495,7 @@
                 {
                     "additionalProperties": false,
                     "properties": {
+                        "conditions": {},
                         "function": {
                             "enum": [
                                 "minecraft:enchant_randomly"
@@ -509,6 +515,7 @@
                 {
                     "additionalProperties": false,
                     "properties": {
+                        "conditions": {},
                         "function": {
                             "enum": [
                                 "minecraft:enchant_with_levels"
@@ -532,6 +539,7 @@
                 {
                     "additionalProperties": false,
                     "properties": {
+                        "conditions": {},
                         "function": {
                             "enum": [
                                 "minecraft:looting_enchant"
@@ -552,6 +560,7 @@
                 {
                     "additionalProperties": false,
                     "properties": {
+                        "conditions": {},
                         "function": {
                             "enum": [
                                 "minecraft:furnace_smelt"
@@ -564,6 +573,7 @@
                 {
                     "additionalProperties": false,
                     "properties": {
+                        "conditions": {},
                         "function": {
                             "enum": [
                                 "minecraft:exploration_map"
@@ -638,6 +648,7 @@
                 {
                     "additionalProperties": false,
                     "properties": {
+                        "conditions": {},
                         "function": {
                             "enum": [
                                 "minecraft:set_name"
@@ -657,6 +668,7 @@
                 {
                     "additionalProperties": false,
                     "properties": {
+                        "conditions": {},
                         "function": {
                             "enum": [
                                 "minecraft:set_lore"
@@ -683,6 +695,7 @@
                 {
                     "additionalProperties": false,
                     "properties": {
+                        "conditions": {},
                         "function": {
                             "enum": [
                                 "minecraft:fill_player_head"
@@ -752,6 +765,7 @@
                         }
                     ],
                     "properties": {
+                        "conditions": {},
                         "function": {
                             "enum": [
                                 "minecraft:apply_bonus"
@@ -772,6 +786,7 @@
                 {
                     "additionalProperties": false,
                     "properties": {
+                        "conditions": {},
                         "function": {
                             "enum": [
                                 "minecraft:copy_name"
@@ -789,6 +804,7 @@
                 {
                     "additionalProperties": false,
                     "properties": {
+                        "conditions": {},
                         "function": {
                             "enum": [
                                 "minecraft:copy_nbt"
@@ -839,6 +855,7 @@
                 {
                     "additionalProperties": false,
                     "properties": {
+                        "conditions": {},
                         "function": {
                             "enum": [
                                 "minecraft:explosion_decay"
@@ -850,6 +867,7 @@
                 {
                     "additionalProperties": false,
                     "properties": {
+                        "conditions": {},
                         "function": {
                             "enum": [
                                 "minecraft:limit_count"
@@ -867,6 +885,7 @@
                 {
                     "additionalProperties": false,
                     "properties": {
+                        "conditions": {},
                         "function": {
                             "enum": [
                                 "minecraft:set_contents"
@@ -886,6 +905,7 @@
                 {
                     "additionalProperties": false,
                     "properties": {
+                        "conditions": {},
                         "function": {
                             "enum": [
                                 "minecraft:set_loot_table"
