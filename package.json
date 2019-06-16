@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "针对 Minecraft 中多种 JSON 文件的 JSON schema",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "convert": "node ./scripts/convert.js"
   },
   "repository": {
     "type": "git",

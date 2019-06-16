@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
-    "$id": "https://raw.githubusercontent.com/Levertion/minecraft-json-schema/master/java/shared/villager_profession.json",
+    "$id": "https://raw.githubusercontent.com/SPGoding/minecraft-json-schema-zh_CN/master/java/shared/villager_profession.json",
     "type": "string",
     "enum": [
         "minecraft:armorer",

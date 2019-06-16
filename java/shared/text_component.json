@@ -1,13 +1,13 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
-    "$id": "https://raw.githubusercontent.com/Levertion/minecraft-json-schema/master/java/shared/text_component.json",
+    "$id": "https://raw.githubusercontent.com/SPGoding/minecraft-json-schema-zh_CN/master/java/shared/text_component.json",
     "$ref": "#/definitions/text_component",
     "definitions": {
         "text_component": {
             "anyOf": [
                 {
                     "type": "string",
-                    "title": "Equivalent to {\"text\":\"Value\"}"
+                    "title": "与 {\"text\":\"Value\"} 等价。"
                 },
                 {
                     "$ref": "#/definitions/text_object"
@@ -17,7 +17,7 @@
                     "items": {
                         "$ref": "#/definitions/text_component"
                     },
-                    "title": "Equivalent to firstItem, with \"extra\":[nextItems]"
+                    "title": "与有着 \"extra\":[剩余项目...] 的 [第一个项目] 等价。"
                 }
             ]
         },
@@ -28,10 +28,12 @@
                     "properties": {
                         "text": {
                             "type": "string",
-                            "title": "The direct text to apply"
+                            "title": "直接显示的字符串。"
                         }
                     },
-                    "required": ["text"],
+                    "required": [
+                        "text"
+                    ],
                     "not": {
                         "required": [
                             "translate",
@@ -48,46 +50,61 @@
                     "properties": {
                         "translate": {
                             "type": "string",
-                            "title": "The translation string to translate"
+                            "title": "定义在资源包内的翻译字符串。"
                         },
                         "with": {
                             "type": "array",
                             "title": "Replacements",
-                            "description": "Extra items to apply in place of %s and %{x}$s in the translation string. These items inherit from the base component in styling, such as text colour and italics",
+                            "description": "替换翻译字符串中 %s 和 %{x}$s 的项目。这些项目继承了根项目的样式，例如文字颜色、是否斜体等。",
                             "items": {
                                 "$ref": "#/definitions/text_component"
                             }
                         }
                     },
-                    "required": ["translate"],
+                    "required": [
+                        "translate"
+                    ],
                     "not": {
-                        "required": ["text", "score", "selector", "keybind", "nbt", "interpret"]
+                        "required": [
+                            "text",
+                            "score",
+                            "selector",
+                            "keybind",
+                            "nbt",
+                            "interpret"
+                        ]
                     }
                 },
                 {
                     "properties": {
                         "score": {
-                            "title": "A score to display",
+                            "title": "要显示的分数。",
                             "additionalProperties": false,
                             "type": "object",
                             "properties": {
                                 "name": {
                                     "type": "string",
-                                    "title": "Entity selector whose score to show"
+                                    "title": "实体选择器或假名等。"
                                 },
                                 "objective": {
                                     "type": "string",
-                                    "title": "Objective to show score from"
+                                    "title": "记分项。"
                                 },
                                 "value": {
-                                    "type": ["number", "string", "boolean"],
-                                    "title": "A default when score not found",
-                                    "description": "Will be converted to a string if needed"
+                                    "type": [
+                                        "number",
+                                        "string",
+                                        "boolean"
+                                    ],
+                                    "title": "当未找到分数时显示的默认字符串。",
+                                    "description": "如果为其他类型，将被自动转换为字符串。"
                                 }
                             }
                         }
                     },
-                    "required": ["score"],
+                    "required": [
+                        "score"
+                    ],
                     "not": {
                         "required": [
                             "text",
@@ -104,12 +121,13 @@
                     "properties": {
                         "selector": {
                             "type": "string",
-                            "pattern": "^@[parse]",
-                            "title": "An entity to mention",
-                            "description": "If there are multiple, they will be comma seperated until the last value with an 'and'"
+                            "title": "要显示的实体名或实体选择器。",
+                            "description": "如果有多个实体，将会被逗号分割，最后两个实体会被\"和\"分割。"
                         }
                     },
-                    "required": ["selector"],
+                    "required": [
+                        "selector"
+                    ],
                     "not": {
                         "required": [
                             "text",
@@ -126,10 +144,47 @@
                     "properties": {
                         "keybind": {
                             "type": "string",
-                            "title": "The name of the keybind to show"
+                            "title": "要显示的按键的按键名。",
+                            "enum": [
+                                "key.attack",
+                                "key.use",
+                                "key.forward",
+                                "key.left",
+                                "key.back",
+                                "key.right",
+                                "key.jump",
+                                "key.sneak",
+                                "key.sprint",
+                                "key.drop",
+                                "key.inventory",
+                                "key.chat",
+                                "key.playerlist",
+                                "key.pickItem",
+                                "key.command",
+                                "key.screenshot",
+                                "key.togglePerspective",
+                                "key.smoothCamera",
+                                "key.fullscreen",
+                                "key.spectatorOutlines",
+                                "key.swapHands",
+                                "key.saveToolbarActivator",
+                                "key.loadToolbarActivator",
+                                "key.advancements",
+                                "key.hotbar.1",
+                                "key.hotbar.2",
+                                "key.hotbar.3",
+                                "key.hotbar.4",
+                                "key.hotbar.5",
+                                "key.hotbar.6",
+                                "key.hotbar.7",
+                                "key.hotbar.8",
+                                "key.hotbar.9"
+                            ]
                         }
                     },
-                    "required": ["keybind"],
+                    "required": [
+                        "keybind"
+                    ],
                     "not": {
                         "required": [
                             "text",
@@ -141,25 +196,28 @@
                             "interpret"
                         ]
                     }
-                },                
+                },
                 {
                     "properties": {
                         "nbt": {
                             "type": "string",
-                            "title": "The NBT Path"
+                            "title": "NBT 路径。"
                         },
                         "interpret": {
                             "type": "boolean",
-                            "title": "Whether contents of selected tags should be interpreted as chat components"
+                            "title": "是否将内容视作聊天组件解析。"
                         }
                     },
-                    "required": ["nbt"],
+                    "required": [
+                        "nbt"
+                    ],
                     "anyOf": [
                         {
                             "properties": {
                                 "block": {
                                     "type": "string",
-                                    "title": "The coordinates of the block which uses the same format as /setblock"
+                                    "pattern": "([+-]?\\d+[\\.]?\\d+)\\s([+-]?\\d+[\\.]?\\d+)\\s([+-]?\\d+[\\.]?\\d+)",
+                                    "title": "该方块的坐标，格式与 \"/setblock\" 命令中的一致。"
                                 }
                             },
                             "required": [
@@ -175,7 +233,7 @@
                             "properties": {
                                 "entity": {
                                     "type": "string",
-                                    "title": "The target selector"
+                                    "title": "实体选择器。"
                                 }
                             },
                             "required": [
@@ -215,10 +273,10 @@
                     "type": "array",
                     "$ref": "#/definitions/text_component",
                     "title": "Additional items to add",
-                    "description": "These items inherit from the base component in styling, such as text colour and italics"
+                    "description": "这些项目继承了根项目的样式，例如文字颜色、是否斜体等。"
                 },
                 "color": {
-                    "title": "The colour of the text",
+                    "title": "文字颜色。",
                     "enum": [
                         "black",
                         "dark_blue",
@@ -240,63 +298,85 @@
                     ]
                 },
                 "bold": {
-                    "title": "Whether to have the text bold",
+                    "title": "是否加粗。",
                     "type": "boolean"
                 },
                 "italic": {
-                    "title": "Whether to have the text in italics",
+                    "title": "是否斜体。",
                     "type": "boolean"
                 },
                 "underlined": {
-                    "title": "Whether to have the text underlined",
+                    "title": "是否添加下划线。",
                     "type": "boolean"
                 },
                 "strikethrough": {
-                    "title": "Whether to have the text strikethroughed",
+                    "title": "是否添加删除线。",
                     "type": "boolean"
                 },
                 "obfuscated": {
-                    "title": "Whether to have the text obfuscated",
-                    "description": "This makes the text cycle through characters with the same width",
+                    "title": "是否混淆。",
+                    "description": "这会使文字在相同宽度的字母间循环显示（仅对英文字母有效，对中文无效）。",
                     "type": "boolean"
                 },
                 "insertion": {
-                    "title": "Insertion text",
-                    "description": "When the player SHIFT-clicks on a section of text, what to add to their chat window",
+                    "title": "插入文字。",
+                    "description": "当玩家按住 Shift 后点击此文本时，添加到聊天窗口的文字。",
                     "type": "string"
                 },
                 "clickEvent": {
                     "type": "object",
-                    "title": "Action on click",
-                    "description": "Action to perform when this text is left clicked on",
+                    "title": "点击行为。",
+                    "description": "当左键点击该文字时执行的行为。",
                     "additionalProperties": false,
                     "properties": {
                         "action": {
-                            "enum": [
-                                "open_url",
-                                "run_command",
-                                "change_page",
-                                "suggest_command"
+                            "oneOf": [
+                                {
+                                    "enum": [
+                                        "open_url"
+                                    ],
+                                    "description": "打开 value 中储存的网址"
+                                },
+                                {
+                                    "enum": [
+                                        "run_command"
+                                    ],
+                                    "description": "执行 value 中储存的命令，命令需要用 / 开头，否则会直接当作普通文本发出。"
+                                },
+                                {
+                                    "enum": [
+                                        "change_page"
+                                    ],
+                                    "description": "翻书页。"
+                                },
+                                {
+                                    "enum": [
+                                        "suggest_command"
+                                    ],
+                                    "description": "用 value 替换玩家聊天窗口中的内容。"
+                                }
                             ],
-                            "title": "What to do",
-                            "description": "open_url opens the web address in value, run_command runs the command in value (use /trigger), change_page changes the book page, and suggest_command replaces the player's chat window"
+                            "title": "做什么"
                         }
                     },
                     "value": {
                         "type": "string",
-                        "title": "Value to run action with"
+                        "title": "值"
                     }
                 },
                 "hoverEvent": {
                     "additionalProperties": false,
-                    "description": "What to show upon a hover",
+                    "description": "当玩家鼠标悬浮在该文字上时显示的内容。",
                     "anyOf": [
                         {
                             "type": "object",
+                            "title":　"显示文本。",
                             "properties": {
                                 "action": {
                                     "type": "string",
-                                    "enum": ["show_text"]
+                                    "enum": [
+                                        "show_text"
+                                    ]
                                 },
                                 "value": {
                                     "anyOf": [
@@ -309,9 +389,26 @@
                         },
                         {
                             "type": "object",
+                            "title":　"显示物品。",
                             "properties": {
                                 "action": {
-                                    "enum": ["show_item", "show_entity"]
+                                    "enum": [
+                                        "show_item"
+                                    ]
+                                },
+                                "value": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        {
+                            "type": "object",
+                            "title":　"显示实体。",
+                            "properties": {
+                                "action": {
+                                    "enum": [
+                                        "show_entity"
+                                    ]
                                 },
                                 "value": {
                                     "type": "string"
