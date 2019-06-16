@@ -1,11 +1,13 @@
 # minecraft-json-schema-zh_CN
 
-[![License](https://img.shields.io/github/license/SPGoding/minecraft-json-schemas-zh_CN.svg?style=flat-square)](https://github.com/SPGoding/minecraft-json-schemas-zh_CN/blob/master/LICENSE)
+[![License](https://img.shields.io/badge/License-CC%20BY%204.0-blue.svg?style=flat-square)](https://creativecommons.org/licenses/by/4.0/)
 [![Gitmoji](https://img.shields.io/badge/gitmoji-%20😜%20😍-FFDD67.svg?style=flat-square)](https://gitmoji.carloscuesta.me/)
 
 已更新至：Minecraft Java版 1.14.2
 
 针对 Minecraft 中多种 JSON 文件的 [JSON schema](http://json-schema.org/)。配合现代编辑器，可以实现在书写 JSON 时提供自动补全，并自动校验格式。
+
+![](asd.jpg)
 
 ## 设计规范
 
