@@ -72,7 +72,7 @@
         "conditions": {
             "type": "array",
             "title": "条件",
-            "description": "该随机池/项目被使用时应达成的条件。",
+            "description": "该随机池/项目/函数被使用时应达成的条件。",
             "items": {
                 "$ref": "#/definitions/condition"
             }
@@ -344,6 +344,11 @@
             "required": [
                 "function"
             ],
+            "properties": {
+                "conditions": {
+                    "$ref": "#/definitions/conditions"
+                }
+            },
             "oneOf": [
                 {
                     "additionalProperties": false,
@@ -792,9 +797,15 @@
                             "description": "将 NBT 从源复制到目标。"
                         },
                         "source": {
-                            "$ref": "#/definitions/entity",
-                            "enum": [
-                                "block_entity"
+                            "oneOf": [
+                                {
+                                    "$ref": "#/definitions/entity"
+                                },
+                                {
+                                    "enum": [
+                                        "block_entity"
+                                    ]
+                                }
                             ]
                         },
                         "ops": {
