@@ -1,6 +1,6 @@
 {
-    "$schema": "http://json-schema.org/schema#",
-    "$id": "https://raw.githubusercontent.com/Levertion/minecraft-json-schemas/master/java/data/tags/fluid.json",
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://raw.githubusercontent.com/SPGoding/minecraft-json-schemas-zh_CNs/master/java/data/tags/fluid.json",
     "type": "object",
     "title": "根标签",
     "additionalProperties": false,

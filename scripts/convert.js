@@ -14,7 +14,7 @@ const registriesJson = JSON.parse(fs.readFileSync(path.join(__dirname, './regist
 function convert(keyName, fileName) {
     const ans = {
         $schema: 'http://json-schema.org/draft-07/schema',
-        $id: `https://raw.githubusercontent.com/SPGoding/minecraft-json-schema-zh_CN/master/java/shared/${fileName}.json`,
+        $id: `https://raw.githubusercontent.com/SPGoding/minecraft-json-schemas-zh_CN/master/java/shared/${fileName}.json`,
         type: 'string',
         enum: []
     }

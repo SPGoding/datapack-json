@@ -1,29 +1,29 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
-    "$id": "https://raw.githubusercontent.com/SPGoding/minecraft-json-schemas-zh_CNs/master/java/data/tags/function.json",
+    "$id": "https://raw.githubusercontent.com/SPGoding/minecraft-json-schemas-zh_CNs/master/java/data/tags/entity_type.json",
     "type": "object",
     "title": "根标签",
     "additionalProperties": false,
     "properties": {
         "replace": {
             "type": "boolean",
-            "title": "如果为 true，该标签会完全替换掉更低优先级的数据包中定义的相同标签的方块。"
+            "title": "如果为 true，该标签会完全替换掉更低优先级的数据包中定义的相同标签的实体类型。"
         },
         "values": {
             "type": "array",
             "items": {
                 "oneOf": [
                     {
-                        "$ref": "../../shared/resource_location.json",
-                        "description": "一个函数资源路径。"
+                        "$ref": "../../shared/entity_name.json",
+                        "description": "一个实体类型。"
                     },
                     {
                         "$ref": "../../shared/tag_location.json",
-                        "description": "一个函数标签。"
+                        "description": "一个实体类型标签。"
                     }
                 ]
             },
-            "title": "一系列函数。"
+            "title": "一系列实体类型。"
         }
     }
 }

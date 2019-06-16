@@ -1,6 +1,6 @@
 {
-    "$schema": "http://json-schema.org/schema#",
-    "$id": "https://raw.githubusercontent.com/Levertion/minecraft-json-schema/master/java/data/advancement.json",
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://raw.githubusercontent.com/SPGoding/minecraft-json-schemas-zh_CN/master/java/data/advancement.json",
     "type": "object",
     "additionalProperties": false,
     "properties": {
