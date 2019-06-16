@@ -16,7 +16,8 @@
                 "minecraft:chest",
                 "minecraft:empty",
                 "minecraft:entity",
-                "minecraft:fishing"
+                "minecraft:fishing",
+                "minecraft:generic"
             ]
         },
         "functions": {
@@ -505,8 +506,7 @@
                     "properties": {
                         "function": {
                             "enum": [
-                                "minecraft:enchant_with_levels",
-                                "enchant_with_levels"
+                                "minecraft:enchant_with_levels"
                             ],
                             "title": "附魔台。",
                             "description": "像该物品被附魔台附魔一样进行随机附魔。"
