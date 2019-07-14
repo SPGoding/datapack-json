@@ -1,6 +1,6 @@
 {
     "name": "vscode-datapack-helper-plus-json",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "publisher": "SPGoding",
     "engines": {
         "vscode": "^1.22.0"
