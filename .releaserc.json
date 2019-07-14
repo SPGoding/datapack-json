@@ -2,26 +2,26 @@
     "plugins": [
         "semantic-release-gitmoji",
         [
-            "semantic-release-vsce",
-            {
-                "assets": "vscode-datapack-helper-plus-json.vsix"
-            }
-        ],
-        [
-            "@semantic-release/github",
-            {
-                "assets": "vscode-datapack-helper-plus-json.vsix"
-            }
-        ],
-        [
             "@semantic-release/git",
             {
                 "assets": [
                     "package.json",
                     "package-lock.json",
-                    "vscode-datapack-helper-plus-json.vsix"
+                    "datapack-helper-plus-json.vsix"
                 ],
                 "message": ":bookmark: v${nextRelease.version}\n\n[skip ci]\n\nhttps://github.com/SPGoding/vscode-datapack-helper-plus-json/releases/tag/${nextRelease.gitTag}"
+            }
+        ],
+        [
+            "semantic-release-vsce",
+            {
+                "assets": "datapack-helper-plus-json.vsix"
+            }
+        ],
+        [
+            "@semantic-release/github",
+            {
+                "assets": "datapack-helper-plus-json.vsix"
             }
         ]
     ]
