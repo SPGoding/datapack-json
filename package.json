@@ -21,6 +21,7 @@
         "datapack-json-schemas": "^1.0.2"
     },
     "devDependencies": {
+        "@semantic-release/changelog": "^3.0.4",
         "@semantic-release/git": "^7.0.16",
         "gitmoji-cli": "^1.9.2",
         "semantic-release": "^15.13.16",
