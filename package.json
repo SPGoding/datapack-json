@@ -7,7 +7,7 @@
     },
     "license": "MIT",
     "displayName": "datapack helper plus (JSON)",
-    "description": "A VSCode extension providing JSON validations for Minecraft datapacks.",
+    "description": "Provides JSON validations for Minecraft datapacks.",
     "categories": [
         "Linters",
         "Other"
