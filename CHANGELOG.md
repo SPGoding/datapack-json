@@ -1,3 +1,8 @@
+# [v1.0.4](https://github.com/SPGoding/vscode-datapack-helper-plus-json/compare/v1.0.3...v1.0.4) (2019-08-16)
+
+## 🐛 Bug Fixes
+- [`d9ea410`](https://github.com/SPGoding/vscode-datapack-helper-plus-json/commit/d9ea410)  Fix loot table schema
+
 # [v1.0.3](https://github.com/SPGoding/vscode-datapack-helper-plus-json/compare/v1.0.2...v1.0.3) (2019-08-14)
 
 ## 🐛 Bug Fixes
