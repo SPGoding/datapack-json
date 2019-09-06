@@ -1,3 +1,8 @@
+# [v1.0.5](https://github.com/SPGoding/vscode-datapack-helper-plus-json/compare/v1.0.4...v1.0.5) (2019-09-06)
+
+## 🐛 Bug Fixes
+- [`1c9e3e8`](https://github.com/SPGoding/vscode-datapack-helper-plus-json/commit/1c9e3e8)  Add missing attributes
+
 # [v1.0.4](https://github.com/SPGoding/vscode-datapack-helper-plus-json/compare/v1.0.3...v1.0.4) (2019-08-16)
 
 ## 🐛 Bug Fixes
