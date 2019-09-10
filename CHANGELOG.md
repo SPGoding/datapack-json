@@ -1,3 +1,8 @@
+# [v1.1.0](https://github.com/SPGoding/vscode-datapack-helper-plus-json/compare/v1.0.5...v1.1.0) (2019-09-10)
+
+## ✨ New Features
+- [`94b11fb`](https://github.com/SPGoding/vscode-datapack-helper-plus-json/commit/94b11fb)  Update to 19w36a
+
 # [v1.0.5](https://github.com/SPGoding/vscode-datapack-helper-plus-json/compare/v1.0.4...v1.0.5) (2019-09-06)
 
 ## 🐛 Bug Fixes
