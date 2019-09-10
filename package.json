@@ -18,7 +18,7 @@
         "json"
     ],
     "dependencies": {
-        "datapack-json-schemas": "^1.1.1"
+        "datapack-json-schemas": "^1.2.0"
     },
     "devDependencies": {
         "@semantic-release/changelog": "^3.0.4",
