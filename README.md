@@ -2,18 +2,18 @@
 
 [![CircleCI](https://img.shields.io/circleci/build/github/SPGoding/vscode-datapack-helper-plus-json.svg?logo=circleci&style=flat-square)](https://circleci.com/gh/SPGoding/vscode-datapack-helper-plus-json)
 [![npm](https://img.shields.io/npm/v/datapack-helper-plus-json.svg?logo=npm&style=flat-square)](https://npmjs.com/package/datapack-helper-plus-json)
-[![VSCode Marketplace](https://img.shields.io/visual-studio-marketplace/v/SPGoding.datapack-helper-plus-json.svg?style=flat-square)](https://marketplace.visualstudio.com/items?itemName=SPGoding.datapack-helper-plus-json)
-[![VSCode Marketplace Downloads](https://img.shields.io/visual-studio-marketplace/d/SPGoding.datapack-helper-plus-json.svg?style=flat-square)](https://marketplace.visualstudio.com/items?itemName=SPGoding.datapack-helper-plus-json)
-[![VSCode Marketplace Installs](https://img.shields.io/visual-studio-marketplace/i/SPGoding.datapack-helper-plus-json.svg?style=flat-square)](https://marketplace.visualstudio.com/items?itemName=SPGoding.datapack-helper-plus-json)
-[![VSCode Marketplace Rating](https://img.shields.io/visual-studio-marketplace/stars/SPGoding.datapack-helper-plus-json.svg?style=flat-square)](https://marketplace.visualstudio.com/items?itemName=SPGoding.datapack-helper-plus-json)
+[![VSCode Marketplace](https://img.shields.io/visual-studio-marketplace/v/SPGoding.datapack-helper-plus-json.svg?logo=visual-studio-code&style=flat-square)](https://marketplace.visualstudio.com/items?itemName=SPGoding.datapack-helper-plus-json)
+[![VSCode Marketplace Downloads](https://img.shields.io/visual-studio-marketplace/d/SPGoding.datapack-helper-plus-json.svg?logo=visual-studio-code&style=flat-square)](https://marketplace.visualstudio.com/items?itemName=SPGoding.datapack-helper-plus-json)
+[![VSCode Marketplace Installs](https://img.shields.io/visual-studio-marketplace/i/SPGoding.datapack-helper-plus-json.svg?logo=visual-studio-code&style=flat-square)](https://marketplace.visualstudio.com/items?itemName=SPGoding.datapack-helper-plus-json)
+[![VSCode Marketplace Rating](https://img.shields.io/visual-studio-marketplace/stars/SPGoding.datapack-helper-plus-json.svg?logo=visual-studio-code&style=flat-square)](https://marketplace.visualstudio.com/items?itemName=SPGoding.datapack-helper-plus-json)
 
 [![License](https://img.shields.io/github/license/SPGoding/vscode-datapack-helper-plus-json.svg?style=flat-square)](https://github.com/SPGoding/vscode-datapack-helper-plus-json/blob/master/LICENSE)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?style=flat-square)](https://github.com/semantic-release/semantic-release)
-[![Gitmoji](https://img.shields.io/badge/gitmoji-%20😜%20😍-FFDD67.svg?style=flat-square)](https://gitmoji.carloscuesta.me/)
+[![Gitmoji](https://img.shields.io/badge/gitmoji-%20%F0%9F%98%9C%20%F0%9F%98%8D-FFDD67.svg?style=flat-square)](https://gitmoji.carloscuesta.me/)
 
-Update to: Minecraft Java Edition 19w38b
+Updated to: Minecraft Java Edition 19w38b
 
-An VSCode extension providing JSON schemas for Minecraft: Java Edition datapack JSON files. Information about json schemas can be found at [json-schema.org](http://json-schema.org/).
+A VSCode extension providing JSON schemas for Minecraft: Java Edition datapack JSON files. Information about json schemas can be found at [json-schema.org](http://json-schema.org/).
 
 ## Installation
 
