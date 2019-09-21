@@ -6,7 +6,7 @@
         "vscode": "^1.22.0"
     },
     "license": "MIT",
-    "displayName": "datapack helper plus (JSON)",
+    "displayName": "Datapack Helper Plus (JSON)",
     "description": "Provides JSON validations for Minecraft datapacks.",
     "categories": [
         "Linters",
@@ -18,7 +18,7 @@
         "json"
     ],
     "dependencies": {
-        "datapack-json-schemas": "^1.2.0"
+        "datapack-json-schemas": "^1.3.0"
     },
     "devDependencies": {
         "@semantic-release/changelog": "^3.0.4",
@@ -39,6 +39,10 @@
         ],
         "jsonValidation": [
             {
+                "fileMatch": "pack.mcmeta",
+                "url": "./node_modules/datapack-json-schemas/src/pack.mcmeta.json"
+            },
+            {
                 "fileMatch": "data/*/advancements/**.json",
                 "url": "./node_modules/datapack-json-schemas/src/advancement.json"
             },
@@ -47,8 +51,8 @@
                 "url": "./node_modules/datapack-json-schemas/src/loot_table.json"
             },
             {
-                "fileMatch": "pack.mcmeta",
-                "url": "./node_modules/datapack-json-schemas/src/pack.mcmeta.json"
+                "fileMatch": "data/*/predicates/**.json",
+                "url": "./node_modules/datapack-json-schemas/src/predicate.json"
             },
             {
                 "fileMatch": "data/*/recipes/**.json",
