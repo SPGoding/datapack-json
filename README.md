@@ -13,7 +13,11 @@
 
 Update to: Minecraft Java Edition 19w38b
 
-JSON schemas for Minecraft: Java Edition datapack JSON files. Information about json schemas can be found at [json-schema.org](http://json-schema.org/).
+An VSCode extension providing JSON schemas for Minecraft: Java Edition datapack JSON files. Information about json schemas can be found at [json-schema.org](http://json-schema.org/).
+
+## Installation
+
+You can download and install this extension on [VSCode Marketplace](https://marketplace.visualstudio.com/items?itemName=SPGoding.datapack-helper-plus-json).
 
 ## Design choices
 
