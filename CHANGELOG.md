@@ -1,3 +1,8 @@
+# [v1.2.0](https://github.com/SPGoding/vscode-datapack-helper-plus-json/compare/v1.1.0...v1.2.0) (2019-09-21)
+
+## ✨ New Features
+- [`589de61`](https://github.com/SPGoding/vscode-datapack-helper-plus-json/commit/589de61)  Support predicates
+
 # [v1.1.0](https://github.com/SPGoding/vscode-datapack-helper-plus-json/compare/v1.0.5...v1.1.0) (2019-09-10)
 
 ## ✨ New Features
