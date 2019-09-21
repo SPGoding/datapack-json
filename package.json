@@ -37,43 +37,43 @@
         "jsonValidation": [
             {
                 "fileMatch": "pack.mcmeta",
-                "url": "./node_modules/datapack-json-schemas/src/pack.mcmeta.json"
+                "url": "./src/pack.mcmeta.json"
             },
             {
                 "fileMatch": "data/*/advancements/**.json",
-                "url": "./node_modules/datapack-json-schemas/src/advancement.json"
+                "url": "./src/advancement.json"
             },
             {
                 "fileMatch": "data/*/loot_tables/**.json",
-                "url": "./node_modules/datapack-json-schemas/src/loot_table.json"
+                "url": "./src/loot_table.json"
             },
             {
                 "fileMatch": "data/*/predicates/**.json",
-                "url": "./node_modules/datapack-json-schemas/src/predicate.json"
+                "url": "./src/predicate.json"
             },
             {
                 "fileMatch": "data/*/recipes/**.json",
-                "url": "./node_modules/datapack-json-schemas/src/recipe.json"
+                "url": "./src/recipe.json"
             },
             {
                 "fileMatch": "data/*/tags/blocks/**.json",
-                "url": "./node_modules/datapack-json-schemas/src/tags/block.json"
+                "url": "./src/tags/block.json"
             },
             {
                 "fileMatch": "data/*/tags/entity_types/**.json",
-                "url": "./node_modules/datapack-json-schemas/src/tags/entity_type.json"
+                "url": "./src/tags/entity_type.json"
             },
             {
                 "fileMatch": "data/*/tags/fluids/**.json",
-                "url": "./node_modules/datapack-json-schemas/src/tags/fluid.json"
+                "url": "./src/tags/fluid.json"
             },
             {
                 "fileMatch": "data/*/tags/functions/**.json",
-                "url": "./node_modules/datapack-json-schemas/src/tags/function.json"
+                "url": "./src/tags/function.json"
             },
             {
                 "fileMatch": "data/*/tags/items/**.json",
-                "url": "./node_modules/datapack-json-schemas/src/tags/item.json"
+                "url": "./src/tags/item.json"
             }
         ]
     },

@@ -1,5 +1,9 @@
-.circleci/**
-.vscode/**
-.gitignore
-.releaserc.json
-.renovaterc.json
+/.circleci
+/.vscode
+/node_modules
+/playground
+/utils
+/.gitignore
+/.npmignore
+/.releaserc.json
+/.renovaterc.json
