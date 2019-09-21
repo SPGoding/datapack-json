@@ -1,3 +1,8 @@
+# [v1.3.0](https://github.com/SPGoding/vscode-datapack-helper-plus-json/compare/v1.2.0...v1.3.0) (2019-09-21)
+
+## ✨ New Features
+- [`6307884`](https://github.com/SPGoding/vscode-datapack-helper-plus-json/commit/6307884)  Change into an npm package
+
 # [v1.2.0](https://github.com/SPGoding/vscode-datapack-helper-plus-json/compare/v1.1.0...v1.2.0) (2019-09-21)
 
 ## ✨ New Features
