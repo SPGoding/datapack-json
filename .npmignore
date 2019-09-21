@@ -4,6 +4,7 @@
 /playground
 /utils
 /.gitignore
+/.npmrc
 /.releaserc.json
 /.renovaterc.json
 /.vscodeignore
