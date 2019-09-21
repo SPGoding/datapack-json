@@ -83,6 +83,7 @@
     "icon": "icon.png",
     "scripts": {
         "commit": "gitmoji -c",
+        "convert": "node ./utils/convert.js",
         "release": "semantic-release",
         "test": "echo \"Error: no test specified\" && exit 1"
     },

@@ -1,0 +1,14 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://raw.githubusercontent.com/SPGoding/vscode-datapack-helper-plus-json/master/src/shared/villager_type.json",
+    "type": "string",
+    "enum": [
+        "minecraft:desert",
+        "minecraft:jungle",
+        "minecraft:plains",
+        "minecraft:savanna",
+        "minecraft:snow",
+        "minecraft:swamp",
+        "minecraft:taiga"
+    ]
+}

@@ -1,0 +1,67 @@
+{
+    "json.schemas": [
+        {
+            "fileMatch": [
+                "playground/pack.mcmeta"
+            ],
+            "url": "./src/pack.mcmeta.json"
+        },
+        {
+            "fileMatch": [
+                "playground/advancements/**.json"
+            ],
+            "url": "./src/advancement.json"
+        },
+        {
+            "fileMatch": [
+                "playground/loot_tables/**.json"
+            ],
+            "url": "./src/loot_table.json"
+        },
+        {
+            "fileMatch": [
+                "playground/predicates/**.json"
+            ],
+            "url": "./src/predicate.json"
+        },
+        {
+            "fileMatch": [
+                "playground/recipes/**.json"
+            ],
+            "url": "./src/recipe.json"
+        },
+        {
+            "fileMatch": [
+                "playground/tags/blocks/**.json"
+            ],
+            "url": "./src/tags/block.json"
+        },
+        {
+            "fileMatch": [
+                "playground/tags/entity_types/**.json"
+            ],
+            "url": "./src/tags/entity_type.json"
+        },
+        {
+            "fileMatch": [
+                "playground/tags/fluids/**.json"
+            ],
+            "url": "./src/tags/fluid.json"
+        },
+        {
+            "fileMatch": [
+                "playground/tags/functions/**.json"
+            ],
+            "url": "./src/tags/function.json"
+        },
+        {
+            "fileMatch": [
+                "playground/tags/items/**.json"
+            ],
+            "url": "./src/tags/item.json"
+        }
+    ],
+    "files.associations": {
+        "*.mcmeta": "json"
+    }
+}

@@ -1,0 +1,10 @@
+/.circleci
+/.vscode
+/node_modules
+/playground
+/utils
+/.gitignore
+/.releaserc.json
+/.renovaterc.json
+/.vscodeignore
+/icon.png

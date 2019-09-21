@@ -14,6 +14,7 @@
                 "assets": "datapack-helper-plus-json.vsix"
             }
         ],
+        "@semantic-release/npm",
         [
             "@semantic-release/git",
             {
