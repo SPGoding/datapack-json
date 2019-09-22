@@ -1,3 +1,8 @@
+# [v1.3.2](https://github.com/SPGoding/vscode-datapack-helper-plus-json/compare/v1.3.1...v1.3.2) (2019-09-22)
+
+## 🐛 Bug Fixes
+- [`6691085`](https://github.com/SPGoding/vscode-datapack-helper-plus-json/commit/6691085)  Fix missing schemas for tags (Issues: [`#5`](https://github.com/SPGoding/vscode-datapack-helper-plus-json/issues/5))
+
 # [v1.3.1](https://github.com/SPGoding/vscode-datapack-helper-plus-json/compare/v1.3.0...v1.3.1) (2019-09-22)
 
 ## 🐛 Bug Fixes
