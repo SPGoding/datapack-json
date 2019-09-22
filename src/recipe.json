@@ -1,7 +1,7 @@
 {
     "$comment": "Some descriptions in this file are from https://github.com/skylinerw/guides/blob/master/java/recipes.md",
     "$schema": "http://json-schema.org/draft-07/schema",
-    "$id": "https://raw.githubusercontent.com/SPGoding/vscode-datapack-helper-plus-json/master/src/recipe.json",
+    "$id": "https://raw.githubusercontent.com/SPGoding/datapack-json/master/src/recipe.json",
     "type": "object",
     "title": "Root tag",
     "properties": {

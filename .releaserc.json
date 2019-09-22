@@ -5,20 +5,20 @@
         [
             "semantic-release-vsce",
             {
-                "packageVsix": "datapack-helper-plus-json.vsix"
+                "packageVsix": "datapack-json.vsix"
             }
         ],
         [
             "@semantic-release/github",
             {
-                "assets": "datapack-helper-plus-json.vsix"
+                "assets": "datapack-json.vsix"
             }
         ],
         "@semantic-release/npm",
         [
             "@semantic-release/git",
             {
-                "message": ":bookmark: v${nextRelease.version}\n\n[skip ci]\n\nhttps://github.com/SPGoding/vscode-datapack-helper-plus-json/releases/tag/${nextRelease.gitTag}"
+                "message": ":bookmark: v${nextRelease.version}\n\n[skip ci]\n\nhttps://github.com/SPGoding/datapack-json/releases/tag/${nextRelease.gitTag}"
             }
         ]
     ]

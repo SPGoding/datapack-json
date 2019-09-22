@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
-    "$id": "https://raw.githubusercontent.com/SPGoding/vscode-datapack-helper-plus-json/master/src/shared/text_component.json",
+    "$id": "https://raw.githubusercontent.com/SPGoding/datapack-json/master/src/shared/text_component.json",
     "$ref": "#/definitions/text_component",
     "definitions": {
         "text_component": {
