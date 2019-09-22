@@ -1,5 +1,5 @@
 {
-    "name": "datapack-helper-plus-json",
+    "name": "datapack-json",
     "version": "1.3.2",
     "publisher": "SPGoding",
     "engines": {
@@ -86,10 +86,10 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/SPGoding/vscode-datapack-helper-plus-json.git"
+        "url": "https://github.com/SPGoding/datapack-json.git"
     },
     "bugs": {
-        "url": "https://github.com/SPGoding/vscode-datapack-helper-plus-json/issues"
+        "url": "https://github.com/SPGoding/datapack-json/issues"
     },
-    "homepage": "https://github.com/SPGoding/vscode-datapack-helper-plus-json#readme"
+    "homepage": "https://github.com/SPGoding/datapack-json#readme"
 }
