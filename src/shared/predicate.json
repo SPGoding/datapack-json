@@ -47,6 +47,22 @@
                     "title": "Effects on entity",
                     "description": "The effects on the entity"
                 },
+                "equipment": {
+                    "title": "Equipment of entity",
+                    "additionalProperties": {
+                        "$ref": "#/definitions/item"
+                    },
+                    "propertyNames": {
+                        "enum": [
+                            "head",
+                            "chest",
+                            "legs",
+                            "feet",
+                            "mainhand",
+                            "offhand"
+                        ]
+                    }
+                },
                 "location": {
                     "$ref": "#/definitions/location",
                     "title": "Location",

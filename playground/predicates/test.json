@@ -6,6 +6,12 @@
             "advancements": {
                 "minecraft:a/b": {}
             }
+        },
+        "equipment": {
+            "mainhand": {
+                "count": 1,
+                "item": "minecraft:air"
+            }
         }
     }
 }
