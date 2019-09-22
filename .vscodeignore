@@ -2,6 +2,7 @@
 */**
 
 !src/*
+!src/*/**
 !CHANGELOG.md
 !icon.png
 !LICENSE
