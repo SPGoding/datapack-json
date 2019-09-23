@@ -281,8 +281,11 @@
                     "description": "Joins conditions from parameter terms with 'or' ('disjunction')"
                 },
                 "terms": {
-                    "$ref": "#",
-                    "title": "Terms"
+                    "type": "array",
+                    "title": "Terms",
+                    "items": {
+                        "$ref": "#"
+                    }
                 }
             }
         },

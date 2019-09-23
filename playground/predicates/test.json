@@ -1,17 +1,22 @@
 {
-    "condition": "minecraft:entity_properties",
-    "entity": "this",
-    "predicate": {
-        "player": {
-            "advancements": {
-                "minecraft:a/b": {}
-            }
-        },
-        "equipment": {
-            "mainhand": {
-                "count": 1,
-                "item": "minecraft:air"
+    "condition": "minecraft:alternative",
+    "terms": [
+        {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+                "player": {
+                    "advancements": {
+                        "minecraft:a/b": {}
+                    }
+                },
+                "equipment": {
+                    "mainhand": {
+                        "count": 1,
+                        "item": "minecraft:air"
+                    }
+                }
             }
         }
-    }
+    ]
 }
