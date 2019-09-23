@@ -1,3 +1,9 @@
+# [v1.3.3](https://github.com/SPGoding/datapack-json/compare/v1.3.2...v1.3.3) (2019-09-23)
+
+## 🐛 Bug Fixes
+- [`1c78b63`](https://github.com/SPGoding/datapack-json/commit/1c78b63)  Fix &#x27;minecraft:alternatives&#x27; condition (Issues: [`#6`](https://github.com/SPGoding/datapack-json/issues/6))
+- [`5ffdddb`](https://github.com/SPGoding/datapack-json/commit/5ffdddb)  Add entity type tags in entity predicate (Issues: [`#7`](https://github.com/SPGoding/datapack-json/issues/7))
+
 # [v1.3.2](https://github.com/SPGoding/datapack-json/compare/v1.3.1...v1.3.2) (2019-09-22)
 
 ## 🐛 Bug Fixes
