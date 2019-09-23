@@ -2,6 +2,92 @@
     "$schema": "http://json-schema.org/draft-07/schema",
     "$id": "https://raw.githubusercontent.com/SPGoding/datapack-json/master/src/shared/predicate.json",
     "definitions": {
+        "block": {
+            "properties": {
+                "block": {
+                    "$ref": "./block_name.json",
+                    "title": "The block name"
+                },
+                "state": {
+                    "type": "object",
+                    "title": "The string values of the block states",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "damage": {
+            "type": "object",
+            "properties": {
+                "dealt": {
+                    "$ref": "./range_or_number.json",
+                    "title": "How much damage was dealt",
+                    "description": "This is calculated before damage reduction (such due to armour)"
+                },
+                "taken": {
+                    "$ref": "./range_or_number.json",
+                    "title": "How much damage was taken",
+                    "description": "This is calculated after damage reduction (such due to armour)"
+                },
+                "blocked": {
+                    "type": "boolean",
+                    "title": "Shield used",
+                    "description": "Whether the damage was blocked"
+                },
+                "source_entity": {
+                    "$ref": "#/definitions/entity",
+                    "title": "Entity which did the hitting"
+                }
+            },
+            "additionalProperties": false
+        },
+        "damage_flags": {
+            "type": "object",
+            "properties": {
+                "bypasses_armor": {
+                    "type": "boolean"
+                },
+                "bypasses_invulnerability": {
+                    "type": "boolean"
+                },
+                "bypasses_magic": {
+                    "type": "boolean"
+                },
+                "is_explosion": {
+                    "type": "boolean"
+                },
+                "is_fire": {
+                    "type": "boolean"
+                },
+                "is_magic": {
+                    "type": "boolean"
+                },
+                "is_projectile": {
+                    "type": "boolean"
+                },
+                "source_entity": {
+                    "$ref": "#/definitions/entity"
+                },
+                "direct_entity": {
+                    "$ref": "#/definitions/entity"
+                }
+            },
+            "additionalProperties": false
+        },
+        "death": {
+            "properties": {
+                "entity": {
+                    "$ref": "#/definitions/entity",
+                    "title": "The entity which died"
+                },
+                "killing_blow": {
+                    "$ref": "#/definitions/damage_flags",
+                    "title": "Information about the killing blow"
+                },
+                "additionalProperties": false
+            }
+        },
         "distance": {
             "type": "object",
             "anyOf": [
@@ -34,6 +120,45 @@
                 }
             ],
             "additionalProperties": false
+        },
+        "effect": {
+            "type": "object",
+            "title": "The effects applied. Each key is the effect name",
+            "propertyNames": {
+                "$ref": "./effect_name.json"
+            },
+            "additionalProperties": {
+                "type": "object",
+                "properties": {
+                    "amplifier": {
+                        "title": "The level of the effect",
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "$ref": "./range_or_number.json"
+                            }
+                        ]
+                    },
+                    "duration": {
+                        "title": "The remaining time of the effect (in ticks)",
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "$ref": "./range_or_number.json"
+                            }
+                        ]
+                    },
+                    "visible": {
+                        "type": "boolean",
+                        "title": "Whether the effect is visible"
+                    }
+                },
+                "additionalProperties": false
+            }
         },
         "entity": {
             "properties": {
@@ -73,8 +198,16 @@
                     "title": "The nbt of the entity"
                 },
                 "type": {
-                    "$ref": "./entity_name.json",
-                    "title": "The type of the entity"
+                    "oneOf": [
+                        {
+                            "$ref": "./entity_name.json",
+                            "title": "The type of the entity"
+                        },
+                        {
+                            "$ref": "./tag_location.json",
+                            "title": "The entity type tag where the entity should be"
+                        }
+                    ]
                 },
                 "team": {
                     "type": "string",
@@ -241,6 +374,54 @@
             },
             "additionalProperties": false
         },
+        "item": {
+            "properties": {
+                "item": {
+                    "$ref": "./item_name.json",
+                    "title": "The item ID"
+                },
+                "data": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 15,
+                    "title": "The item metadata"
+                },
+                "durability": {
+                    "$ref": "./range_or_number.json",
+                    "title": "The remaining durability"
+                },
+                "count": {
+                    "$ref": "./range_or_number.json",
+                    "title": "The number of items in the stack"
+                },
+                "potion": {
+                    "$ref": "./potion_name.json",
+                    "title": "Potion type",
+                    "description": "If the item is a potion, check its type"
+                },
+                "enchantments": {
+                    "items": {
+                        "type": "object",
+                        "title": "The enchantments of the item",
+                        "additionalProperties": false,
+                        "properties": {
+                            "enchantment": {
+                                "$ref": "./enchantment_name.json",
+                                "title": "The enchantment name"
+                            },
+                            "levels": {
+                                "$ref": "./range_or_number.json",
+                                "title": "The level of the advancements"
+                            }
+                        }
+                    }
+                },
+                "nbt": {
+                    "$ref": "#/definitions/nbt_string"
+                }
+            },
+            "additionalProperties": false
+        },
         "location": {
             "type": "object",
             "additionalProperties": false,
@@ -336,183 +517,10 @@
                 }
             }
         },
-        "effect": {
-            "type": "object",
-            "title": "The effects applied. Each key is the effect name",
-            "propertyNames": {
-                "$ref": "./effect_name.json"
-            },
-            "additionalProperties": {
-                "type": "object",
-                "properties": {
-                    "amplifier": {
-                        "title": "The level of the effect",
-                        "anyOf": [
-                            {
-                                "type": "integer"
-                            },
-                            {
-                                "$ref": "./range_or_number.json"
-                            }
-                        ]
-                    },
-                    "duration": {
-                        "title": "The remaining time of the effect (in ticks)",
-                        "anyOf": [
-                            {
-                                "type": "integer"
-                            },
-                            {
-                                "$ref": "./range_or_number.json"
-                            }
-                        ]
-                    },
-                    "visible": {
-                        "type": "boolean",
-                        "title": "Whether the effect is visible"
-                    }
-                },
-                "additionalProperties": false
-            }
-        },
-        "item": {
-            "properties": {
-                "item": {
-                    "$ref": "./item_name.json",
-                    "title": "The item ID"
-                },
-                "data": {
-                    "type": "number",
-                    "minimum": 0,
-                    "maximum": 15,
-                    "title": "The item metadata"
-                },
-                "durability": {
-                    "$ref": "./range_or_number.json",
-                    "title": "The remaining durability"
-                },
-                "count": {
-                    "$ref": "./range_or_number.json",
-                    "title": "The number of items in the stack"
-                },
-                "potion": {
-                    "$ref": "./potion_name.json",
-                    "title": "Potion type",
-                    "description": "If the item is a potion, check its type"
-                },
-                "enchantments": {
-                    "items": {
-                        "type": "object",
-                        "title": "The enchantments of the item",
-                        "additionalProperties": false,
-                        "properties": {
-                            "enchantment": {
-                                "$ref": "./enchantment_name.json",
-                                "title": "The enchantment name"
-                            },
-                            "levels": {
-                                "$ref": "./range_or_number.json",
-                                "title": "The level of the advancements"
-                            }
-                        }
-                    }
-                },
-                "nbt": {
-                    "$ref": "#/definitions/nbt_string"
-                }
-            },
-            "additionalProperties": false
-        },
         "nbt_string": {
             "type": "string",
             "title": "NBT string",
             "description": "A string of nbt, which is escaped using the json format (a \\ in front of each \\ or \")"
-        },
-        "block": {
-            "properties": {
-                "block": {
-                    "$ref": "./block_name.json",
-                    "title": "The block name"
-                },
-                "state": {
-                    "type": "object",
-                    "title": "The string values of the block states",
-                    "additionalProperties": {
-                        "type": "string"
-                    }
-                }
-            }
-        },
-        "damage": {
-            "type": "object",
-            "properties": {
-                "dealt": {
-                    "$ref": "./range_or_number.json",
-                    "title": "How much damage was dealt",
-                    "description": "This is calculated before damage reduction (such due to armour)"
-                },
-                "taken": {
-                    "$ref": "./range_or_number.json",
-                    "title": "How much damage was taken",
-                    "description": "This is calculated after damage reduction (such due to armour)"
-                },
-                "blocked": {
-                    "type": "boolean",
-                    "title": "Shield used",
-                    "description": "Whether the damage was blocked"
-                },
-                "source_entity": {
-                    "$ref": "#/definitions/entity",
-                    "title": "Entity which did the hitting"
-                }
-            },
-            "additionalProperties": false
-        },
-        "damage_flags": {
-            "type": "object",
-            "properties": {
-                "bypasses_armor": {
-                    "type": "boolean"
-                },
-                "bypasses_invulnerability": {
-                    "type": "boolean"
-                },
-                "bypasses_magic": {
-                    "type": "boolean"
-                },
-                "is_explosion": {
-                    "type": "boolean"
-                },
-                "is_fire": {
-                    "type": "boolean"
-                },
-                "is_magic": {
-                    "type": "boolean"
-                },
-                "is_projectile": {
-                    "type": "boolean"
-                },
-                "source_entity": {
-                    "$ref": "#/definitions/entity"
-                },
-                "direct_entity": {
-                    "$ref": "#/definitions/entity"
-                }
-            },
-            "additionalProperties": false
-        },
-        "death": {
-            "properties": {
-                "entity": {
-                    "$ref": "#/definitions/entity",
-                    "title": "The entity which died"
-                },
-                "killing_blow": {
-                    "$ref": "#/definitions/damage_flags",
-                    "title": "Information about the killing blow"
-                },
-                "additionalProperties": false
-            }
         }
     }
 }

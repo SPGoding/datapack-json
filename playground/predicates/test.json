@@ -15,7 +15,8 @@
                         "count": 1,
                         "item": "minecraft:air"
                     }
-                }
+                },
+                "type": "#minecraft:skeletons"
             }
         }
     ]
