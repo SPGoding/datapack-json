@@ -18,7 +18,7 @@
                         "description": "A block ID"
                     },
                     {
-                        "$ref": "../shared/tag_location.json",
+                        "$ref": "../shared/tag_id.json",
                         "description": "A block tag"
                     }
                 ]

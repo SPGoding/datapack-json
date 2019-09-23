@@ -204,7 +204,7 @@
                             "title": "The type of the entity"
                         },
                         {
-                            "$ref": "./tag_location.json",
+                            "$ref": "./tag_id.json",
                             "title": "The entity type tag where the entity should be"
                         }
                     ]
