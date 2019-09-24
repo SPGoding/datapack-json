@@ -1,3 +1,8 @@
+# [v1.3.5](https://github.com/SPGoding/datapack-json/compare/v1.3.4...v1.3.5) (2019-09-24)
+
+## 🐛 Bug Fixes
+- [`e198332`](https://github.com/SPGoding/datapack-json/commit/e198332)  Fix structure of &#x27;light&#x27; in location predicate (Issues: [`#11`](https://github.com/SPGoding/datapack-json/issues/11))
+
 # [v1.3.4](https://github.com/SPGoding/datapack-json/compare/v1.3.3...v1.3.4) (2019-09-24)
 
 ## 🐛 Bug Fixes
