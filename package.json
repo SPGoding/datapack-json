@@ -40,39 +40,39 @@
                 "url": "./src/pack.mcmeta.json"
             },
             {
-                "fileMatch": "data/*/advancements/**.json",
+                "fileMatch": "data/*/advancements/*.json",
                 "url": "./src/advancement.json"
             },
             {
-                "fileMatch": "data/*/loot_tables/**.json",
+                "fileMatch": "data/*/loot_tables/*.json",
                 "url": "./src/loot_table.json"
             },
             {
-                "fileMatch": "data/*/predicates/**.json",
+                "fileMatch": "data/*/predicates/*.json",
                 "url": "./src/predicate.json"
             },
             {
-                "fileMatch": "data/*/recipes/**.json",
+                "fileMatch": "data/*/recipes/*.json",
                 "url": "./src/recipe.json"
             },
             {
-                "fileMatch": "data/*/tags/blocks/**.json",
+                "fileMatch": "data/*/tags/blocks/*.json",
                 "url": "./src/tags/block.json"
             },
             {
-                "fileMatch": "data/*/tags/entity_types/**.json",
+                "fileMatch": "data/*/tags/entity_types/*.json",
                 "url": "./src/tags/entity_type.json"
             },
             {
-                "fileMatch": "data/*/tags/fluids/**.json",
+                "fileMatch": "data/*/tags/fluids/*.json",
                 "url": "./src/tags/fluid.json"
             },
             {
-                "fileMatch": "data/*/tags/functions/**.json",
+                "fileMatch": "data/*/tags/functions/*.json",
                 "url": "./src/tags/function.json"
             },
             {
-                "fileMatch": "data/*/tags/items/**.json",
+                "fileMatch": "data/*/tags/items/*.json",
                 "url": "./src/tags/item.json"
             }
         ]
