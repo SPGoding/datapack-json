@@ -503,7 +503,7 @@
                             "properties": {
                                 "formula": {
                                     "enum": [
-                                        "binomial_with_bonus_count"
+                                        "minecraft:binomial_with_bonus_count"
                                     ],
                                     "description": "Add random value using binomial distribution with n <- level + extraRounds and p <- probabilty"
                                 },
@@ -524,7 +524,7 @@
                             "properties": {
                                 "formula": {
                                     "enum": [
-                                        "uniform_bonus_count"
+                                        "minecraft:uniform_bonus_count"
                                     ],
                                     "description": "Add random value using uniform distribution from 0 to bonusMultiplier * level"
                                 },
@@ -542,7 +542,7 @@
                             "properties": {
                                 "formula": {
                                     "enum": [
-                                        "ore_drops"
+                                        "minecraft:ore_drops"
                                     ],
                                     "description": "Apply formula count * (max(0, random(0..1) - 1) + 1)"
                                 },
