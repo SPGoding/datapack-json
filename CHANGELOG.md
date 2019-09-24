@@ -1,3 +1,8 @@
+# [v1.3.4](https://github.com/SPGoding/datapack-json/compare/v1.3.3...v1.3.4) (2019-09-24)
+
+## 🐛 Bug Fixes
+- [`d3ca1cf`](https://github.com/SPGoding/datapack-json/commit/d3ca1cf)  Support namespaced IDs in formula
+
 # [v1.3.3](https://github.com/SPGoding/datapack-json/compare/v1.3.2...v1.3.3) (2019-09-23)
 
 ## 🐛 Bug Fixes
