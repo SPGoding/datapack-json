@@ -20,7 +20,7 @@
                     "title": "Scores to check",
                     "description": "The name of each sub-object is the score to check, it is either a number or a range",
                     "additionalProperties": {
-                        "$ref": "./shared/range_or_number.json"
+                        "$ref": "./shared/range.json"
                     }
                 }
             }
@@ -241,7 +241,7 @@
                     "title": "Checks the time"
                 },
                 "value": {
-                    "$ref": "./shared/range_or_number.json",
+                    "$ref": "./shared/range.json",
                     "title": "Range of accepted values"
                 },
                 "period": {

@@ -664,7 +664,7 @@
                             "description": "Limit count of every item stack to range",
                             "properties": {
                                 "limit": {
-                                    "$ref": "./shared/range_or_number.json"
+                                    "$ref": "./shared/range.json"
                                 }
                             }
                         },

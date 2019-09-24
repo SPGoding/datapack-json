@@ -1,14 +1,21 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
-    "$id": "https://raw.githubusercontent.com/SPGoding/datapack-json/master/src/shared/range_or_number.json",
-    "additionalProperties": false,
-    "type": "object",
-    "properties": {
-        "min": {
+    "$id": "https://raw.githubusercontent.com/SPGoding/datapack-json/master/src/shared/range.json",
+    "oneOf": [
+        {
             "type": "number"
         },
-        "max": {
-            "type": "number"
+        {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "min": {
+                    "type": "number"
+                },
+                "max": {
+                    "type": "number"
+                }
+            }
         }
-    }
+    ]
 }

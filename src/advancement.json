@@ -246,7 +246,7 @@
                             "description": "All of these conditions must pass for the criteria to be activated",
                             "properties": {
                                 "level": {
-                                    "$ref": "./shared/range_or_number.json",
+                                    "$ref": "./shared/range.json",
                                     "title": "The beacon level"
                                 }
                             }
@@ -356,7 +356,7 @@
                                     "title": "The item enchanted"
                                 },
                                 "levels": {
-                                    "$ref": "./shared/range_or_number.json",
+                                    "$ref": "./shared/range.json",
                                     "title": "The number of levels used"
                                 }
                             }
@@ -490,17 +490,17 @@
                                     "additionalProperties": false,
                                     "properties": {
                                         "occupied": {
-                                            "$ref": "./shared/range_or_number.json",
+                                            "$ref": "./shared/range.json",
                                             "title": "Occupied amount",
                                             "description": "How many of the slots in the player's inventory have an item in them"
                                         },
                                         "full": {
-                                            "$ref": "./shared/range_or_number.json",
+                                            "$ref": "./shared/range.json",
                                             "title": "Full slots",
                                             "description": "How many of the slots in the player's inventory have an item with the maximum amount of the item in them in them"
                                         },
                                         "empty": {
-                                            "$ref": "./shared/range_or_number.json",
+                                            "$ref": "./shared/range.json",
                                             "title": "Empty slots",
                                             "description": "The number of the slots in the player's inventory have no item in them"
                                         }
@@ -539,12 +539,12 @@
                                     "description": "The item whose durability changed"
                                 },
                                 "durability": {
-                                    "$ref": "./shared/range_or_number.json",
+                                    "$ref": "./shared/range.json",
                                     "title": "Absolute durability",
                                     "description": "The absolute durability of the item after the change"
                                 },
                                 "delta": {
-                                    "$ref": "./shared/range_or_number.json",
+                                    "$ref": "./shared/range.json",
                                     "title": "Change in durability",
                                     "description": "The amount that the durability changed by"
                                 }
@@ -569,7 +569,7 @@
                             "type": "object",
                             "properties": {
                                 "duration": {
-                                    "$ref": "./shared/range_or_number.json",
+                                    "$ref": "./shared/range.json",
                                     "title": "Time applied",
                                     "description": "The amount of time (in ticks) that the player must have been levitating"
                                 },
@@ -743,7 +743,7 @@
                             "type": "object",
                             "properties": {
                                 "distance": {
-                                    "$ref": "./shared/range_or_number.json",
+                                    "$ref": "./shared/range.json",
                                     "title": "Distance from player to stronghold",
                                     "description": "The number of blocks in the XZ plane between the player and the stronghold - See pythagoras"
                                 }

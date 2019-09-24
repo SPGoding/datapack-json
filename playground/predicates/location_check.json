@@ -3,6 +3,11 @@
     "predicate": {
         "position": {
             "x": 1
+        },
+        "light": {
+            "light": {
+                "min": 1
+            }
         }
     }
 }

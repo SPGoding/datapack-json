@@ -21,12 +21,12 @@
             "type": "object",
             "properties": {
                 "dealt": {
-                    "$ref": "./range_or_number.json",
+                    "$ref": "./range.json",
                     "title": "How much damage was dealt",
                     "description": "This is calculated before damage reduction (such due to armour)"
                 },
                 "taken": {
-                    "$ref": "./range_or_number.json",
+                    "$ref": "./range.json",
                     "title": "How much damage was taken",
                     "description": "This is calculated after damage reduction (such due to armour)"
                 },
@@ -94,27 +94,27 @@
                 {
                     "properties": {
                         "absolute": {
-                            "$ref": "./range_or_number.json"
+                            "$ref": "./range.json"
                         }
                     }
                 },
                 {
                     "properties": {
                         "x": {
-                            "$ref": "./range_or_number.json"
+                            "$ref": "./range.json"
                         },
                         "y": {
-                            "$ref": "./range_or_number.json"
+                            "$ref": "./range.json"
                         },
                         "z": {
-                            "$ref": "./range_or_number.json"
+                            "$ref": "./range.json"
                         }
                     }
                 },
                 {
                     "properties": {
                         "horizontal": {
-                            "$ref": "./range_or_number.json"
+                            "$ref": "./range.json"
                         }
                     }
                 }
@@ -137,7 +137,7 @@
                                 "type": "integer"
                             },
                             {
-                                "$ref": "./range_or_number.json"
+                                "$ref": "./range.json"
                             }
                         ]
                     },
@@ -148,7 +148,7 @@
                                 "type": "integer"
                             },
                             {
-                                "$ref": "./range_or_number.json"
+                                "$ref": "./range.json"
                             }
                         ]
                     },
@@ -250,7 +250,7 @@
                             ]
                         },
                         "level": {
-                            "$ref": "./range_or_number.json",
+                            "$ref": "./range.json",
                             "title": "range of allowed player levels"
                         },
                         "recipes": {
@@ -277,7 +277,7 @@
                                         "title": "Stat name"
                                     },
                                     "value": {
-                                        "$ref": "./range_or_number.json",
+                                        "$ref": "./range.json",
                                         "title": "Value of the stat"
                                     }
                                 },
@@ -387,11 +387,11 @@
                     "title": "The item metadata"
                 },
                 "durability": {
-                    "$ref": "./range_or_number.json",
+                    "$ref": "./range.json",
                     "title": "The remaining durability"
                 },
                 "count": {
-                    "$ref": "./range_or_number.json",
+                    "$ref": "./range.json",
                     "title": "The number of items in the stack"
                 },
                 "potion": {
@@ -410,7 +410,7 @@
                                 "title": "The enchantment name"
                             },
                             "levels": {
-                                "$ref": "./range_or_number.json",
+                                "$ref": "./range.json",
                                 "title": "The level of the advancements"
                             }
                         }
@@ -473,8 +473,15 @@
                     }
                 },
                 "light": {
-                    "$ref": "./range.json",
-                    "title": "The range of visble light"
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "light": {
+                            "$ref": "./range.json",
+                            "title": "The range of visble light",
+                            "description": "visible light = max(sky-darkening,block)"
+                        }
+                    }
                 },
                 "dimension": {
                     "$ref": "./dimension_name.json",
@@ -505,13 +512,13 @@
                     "additionalProperties": false,
                     "properties": {
                         "x": {
-                            "$ref": "./range_or_number.json"
+                            "$ref": "./range.json"
                         },
                         "y": {
-                            "$ref": "./range_or_number.json"
+                            "$ref": "./range.json"
                         },
                         "z": {
-                            "$ref": "./range_or_number.json"
+                            "$ref": "./range.json"
                         }
                     }
                 }
