@@ -1,4 +1,7 @@
 {
+    "display": {
+        "background": "foo:bar.png"
+    },
     "criteria": {
         "c": {
             "trigger": "minecraft:placed_block",
