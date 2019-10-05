@@ -11,7 +11,6 @@
             "title": "Loot table type",
             "description": "The loot table's type. Will be used to validate the usage of functions and conditions",
             "enum": [
-                "minecraft:advancement_reward",
                 "minecraft:block",
                 "minecraft:chest",
                 "minecraft:empty",
