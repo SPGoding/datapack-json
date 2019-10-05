@@ -1,3 +1,9 @@
+# [v1.3.6](https://github.com/SPGoding/datapack-json/compare/v1.3.5...v1.3.6) (2019-10-05)
+
+## 🐛 Bug Fixes
+- [`7ad8e24`](https://github.com/SPGoding/datapack-json/commit/7ad8e24)  Fix namespaced id (Issues: [`#12`](https://github.com/SPGoding/datapack-json/issues/12))
+- [`94d669c`](https://github.com/SPGoding/datapack-json/commit/94d669c)  Remove &#x27;advancement_reward&#x27; loot table type (Issues: [`#14`](https://github.com/SPGoding/datapack-json/issues/14))
+
 # [v1.3.5](https://github.com/SPGoding/datapack-json/compare/v1.3.4...v1.3.5) (2019-09-24)
 
 ## 🐛 Bug Fixes
