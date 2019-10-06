@@ -1,8 +1,8 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
     "$id": "https://raw.githubusercontent.com/SPGoding/datapack-json/master/src/shared/text_component.json",
-    "$ref": "#/definitions/text_component",
-    "definitions": {
+    "$ref": "#/$defs/text_component",
+    "$defs": {
         "text_component": {
             "anyOf": [
                 {
@@ -10,12 +10,12 @@
                     "title": "Equivalent to {\"text\":\"Value\"}"
                 },
                 {
-                    "$ref": "#/definitions/text_object"
+                    "$ref": "#/$defs/text_object"
                 },
                 {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/text_component"
+                        "$ref": "#/$defs/text_component"
                     },
                     "title": "Equivalent to firstItem, with \"extra\":[nextItems]"
                 }
@@ -55,7 +55,7 @@
                             "title": "Replacements",
                             "description": "Extra items to apply in place of %s and %{x}$s in the translation string. These items inherit from the base component in styling, such as text colour and italics",
                             "items": {
-                                "$ref": "#/definitions/text_component"
+                                "$ref": "#/$defs/text_component"
                             }
                         }
                     },
@@ -248,7 +248,7 @@
                 "interpret": {},
                 "extra": {
                     "type": "array",
-                    "$ref": "#/definitions/text_component",
+                    "$ref": "#/$defs/text_component",
                     "title": "Additional items to add",
                     "description": "These items inherit from the base component in styling, such as text colour and italics"
                 },
@@ -354,7 +354,7 @@
                                 "value": {
                                     "anyOf": [
                                         {
-                                            "$ref": "#/definitions/text_component"
+                                            "$ref": "#/$defs/text_component"
                                         }
                                     ]
                                 }

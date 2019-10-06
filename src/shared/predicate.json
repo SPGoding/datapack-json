@@ -1,7 +1,7 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
     "$id": "https://raw.githubusercontent.com/SPGoding/datapack-json/master/src/shared/predicate.json",
-    "definitions": {
+    "$defs": {
         "block": {
             "properties": {
                 "block": {
@@ -36,7 +36,7 @@
                     "description": "Whether the damage was blocked"
                 },
                 "source_entity": {
-                    "$ref": "#/definitions/entity",
+                    "$ref": "#/$defs/entity",
                     "title": "Entity which did the hitting"
                 }
             },
@@ -67,10 +67,10 @@
                     "type": "boolean"
                 },
                 "source_entity": {
-                    "$ref": "#/definitions/entity"
+                    "$ref": "#/$defs/entity"
                 },
                 "direct_entity": {
-                    "$ref": "#/definitions/entity"
+                    "$ref": "#/$defs/entity"
                 }
             },
             "additionalProperties": false
@@ -78,11 +78,11 @@
         "death": {
             "properties": {
                 "entity": {
-                    "$ref": "#/definitions/entity",
+                    "$ref": "#/$defs/entity",
                     "title": "The entity which died"
                 },
                 "killing_blow": {
-                    "$ref": "#/definitions/damage_flags",
+                    "$ref": "#/$defs/damage_flags",
                     "title": "Information about the killing blow"
                 },
                 "additionalProperties": false
@@ -163,19 +163,19 @@
         "entity": {
             "properties": {
                 "distance": {
-                    "$ref": "#/definitions/distance",
+                    "$ref": "#/$defs/distance",
                     "title": "The distance",
                     "description": "The distance between the entity and another location. Location compared to depends on the trigger"
                 },
                 "effects": {
-                    "$ref": "#/definitions/effect",
+                    "$ref": "#/$defs/effect",
                     "title": "Effects on entity",
                     "description": "The effects on the entity"
                 },
                 "equipment": {
                     "title": "Equipment of entity",
                     "additionalProperties": {
-                        "$ref": "#/definitions/item"
+                        "$ref": "#/$defs/item"
                     },
                     "propertyNames": {
                         "enum": [
@@ -189,12 +189,12 @@
                     }
                 },
                 "location": {
-                    "$ref": "#/definitions/location",
+                    "$ref": "#/$defs/location",
                     "title": "Location",
                     "description": "Information about the location of the entity"
                 },
                 "nbt": {
-                    "$ref": "#/definitions/nbt_string",
+                    "$ref": "#/$defs/nbt_string",
                     "title": "The nbt of the entity"
                 },
                 "type": {
@@ -421,7 +421,7 @@
                     }
                 },
                 "nbt": {
-                    "$ref": "#/definitions/nbt_string"
+                    "$ref": "#/$defs/nbt_string"
                 }
             },
             "additionalProperties": false
@@ -448,7 +448,7 @@
                             "title": "Block tag ID"
                         },
                         "nbt": {
-                            "$ref": "#/definitions/nbt_string",
+                            "$ref": "#/$defs/nbt_string",
                             "title": "Block entity NBT"
                         },
                         "state": {

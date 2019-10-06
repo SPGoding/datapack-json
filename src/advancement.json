@@ -1,5 +1,5 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema",
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
     "$id": "https://raw.githubusercontent.com/SPGoding/datapack-json/master/src/advancement.json",
     "type": "object",
     "additionalProperties": false,
@@ -76,7 +76,7 @@
             "description": "The criteria object of the advancement. At least one criteria must be specified. The name of the sub-object is the criterion id, as accessed in \"requirements\" and the <criterion> argument of /advancement",
             "additionalProperties": {
                 "title": "A single criteria",
-                "$ref": "#/definitions/advancement_criterion"
+                "$ref": "#/$defs/advancement_criterion"
             },
             "minProperties": 1
         },
@@ -128,11 +128,11 @@
             }
         }
     },
-    "definitions": {
+    "$defs": {
         "advancement_criterion": {
             "properties": {
                 "trigger": {
-                    "default": ""
+                    "type": "string"
                 }
             },
             "required": [
@@ -158,16 +158,16 @@
                             "description": "All of these conditions must pass for the criteria to be activated",
                             "properties": {
                                 "parent": {
-                                    "$ref": "./shared/predicate.json#/definitions/entity",
+                                    "$ref": "./shared/predicate.json#/$defs/entity",
                                     "title": "Conditions to test against either of the parents",
                                     "description": "Using both parent and partner is only useful when using horses/donkeys"
                                 },
                                 "partner": {
-                                    "$ref": "./shared/predicate.json#/definitions/entity",
+                                    "$ref": "./shared/predicate.json#/$defs/entity",
                                     "title": "Conditions to test against either of the parents"
                                 },
                                 "child": {
-                                    "$ref": "./shared/predicate.json#/definitions/entity",
+                                    "$ref": "./shared/predicate.json#/$defs/entity",
                                     "title": "Conditions to test against the child entity"
                                 }
                             }
@@ -272,7 +272,7 @@
                             "type": "object",
                             "properties": {
                                 "item": {
-                                    "$ref": "./shared/predicate.json#/definitions/item",
+                                    "$ref": "./shared/predicate.json#/$defs/item",
                                     "title": "Item",
                                     "description": "This will be checked against the item used up"
                                 }
@@ -298,11 +298,11 @@
                             "type": "object",
                             "properties": {
                                 "zombie": {
-                                    "$ref": "./shared/predicate.json#/definitions/entity",
+                                    "$ref": "./shared/predicate.json#/$defs/entity",
                                     "title": "Information about the zombie villager"
                                 },
                                 "villager": {
-                                    "$ref": "./shared/predicate.json#/definitions/entity",
+                                    "$ref": "./shared/predicate.json#/$defs/entity",
                                     "title": "Information about villager cured into"
                                 }
                             }
@@ -327,7 +327,7 @@
                             "type": "object",
                             "properties": {
                                 "effects": {
-                                    "$ref": "./shared/predicate.json#/definitions/effect",
+                                    "$ref": "./shared/predicate.json#/$defs/effect",
                                     "title": "The potion effects of the player"
                                 }
                             }
@@ -352,7 +352,7 @@
                             "type": "object",
                             "properties": {
                                 "item": {
-                                    "$ref": "./shared/predicate.json#/definitions/item",
+                                    "$ref": "./shared/predicate.json#/$defs/item",
                                     "title": "The item enchanted"
                                 },
                                 "levels": {
@@ -378,7 +378,7 @@
                             "additionalProperties": false,
                             "title": "The block to check",
                             "description": "The block which was entered to check the trigger",
-                            "$ref": "./shared/predicate.json#/definitions/block"
+                            "$ref": "./shared/predicate.json#/$defs/block"
                         }
                     }
                 },
@@ -400,7 +400,7 @@
                             "type": "object",
                             "properties": {
                                 "damage": {
-                                    "$ref": "./shared/predicate.json#/definitions/damage",
+                                    "$ref": "./shared/predicate.json#/$defs/damage",
                                     "title": "The damage taken"
                                 }
                             }
@@ -425,11 +425,11 @@
                             "type": "object",
                             "properties": {
                                 "damage": {
-                                    "$ref": "./shared/predicate.json#/definitions/damage",
+                                    "$ref": "./shared/predicate.json#/$defs/damage",
                                     "title": "The damage taken"
                                 },
                                 "entity": {
-                                    "$ref": "./shared/predicate.json#/definitions/entity"
+                                    "$ref": "./shared/predicate.json#/$defs/entity"
                                 }
                             }
                         }
@@ -451,7 +451,7 @@
                             "additionalProperties": false,
                             "title": "The death object",
                             "description": "The conditions object is a direct reference to a death object",
-                            "$ref": "./shared/predicate.json#/definitions/death"
+                            "$ref": "./shared/predicate.json#/$defs/death"
                         }
                     }
                 },
@@ -509,7 +509,7 @@
                                 "items": {
                                     "type": "array",
                                     "items": {
-                                        "$ref": "./shared/predicate.json#/definitions/item"
+                                        "$ref": "./shared/predicate.json#/$defs/item"
                                     }
                                 }
                             }
@@ -534,7 +534,7 @@
                             "type": "object",
                             "properties": {
                                 "item": {
-                                    "$ref": "./shared/predicate.json#/definitions/item",
+                                    "$ref": "./shared/predicate.json#/$defs/item",
                                     "title": "The item",
                                     "description": "The item whose durability changed"
                                 },
@@ -574,7 +574,7 @@
                                     "description": "The amount of time (in ticks) that the player must have been levitating"
                                 },
                                 "distance": {
-                                    "$ref": "./shared/predicate.json#/definitions/distance",
+                                    "$ref": "./shared/predicate.json#/$defs/distance",
                                     "title": "Distance travelled",
                                     "description": "How far the player must have travelled whilst under the effect of the levitation"
                                 }
@@ -597,7 +597,7 @@
                             "additionalProperties": false,
                             "title": "Location of the player",
                             "description": "The location of the player at the time of checking (for \"slept_in_bed\" this is just after they went to sleep)",
-                            "$ref": "./shared/predicate.json#/definitions/location"
+                            "$ref": "./shared/predicate.json#/$defs/location"
                         }
                     }
                 },
@@ -618,17 +618,17 @@
                             "type": "object",
                             "properties": {
                                 "entered": {
-                                    "$ref": "./shared/predicate.json#/definitions/location",
+                                    "$ref": "./shared/predicate.json#/$defs/location",
                                     "title": "Entering the nether",
                                     "description": "Where the player entered the nether (into the overworld)"
                                 },
                                 "exited": {
-                                    "$ref": "./shared/predicate.json#/definitions/location",
+                                    "$ref": "./shared/predicate.json#/$defs/location",
                                     "title": "Exit portal location",
                                     "description": "Where the player left the nether (into the overworld)"
                                 },
                                 "distance": {
-                                    "$ref": "./shared/predicate.json#/definitions/distance",
+                                    "$ref": "./shared/predicate.json#/$defs/distance",
                                     "title": "Distance travelled through the nether",
                                     "description": "The distance between the entry nether portal and the exit nether portal (in the overworld)"
                                 }
@@ -653,17 +653,17 @@
                             "description": "The placed block",
                             "allOf": [
                                 {
-                                    "$ref": "./shared/predicate.json#/definitions/block"
+                                    "$ref": "./shared/predicate.json#/$defs/block"
                                 }
                             ],
                             "properties": {
                                 "item": {
-                                    "$ref": "./shared/predicate.json#/definitions/item",
+                                    "$ref": "./shared/predicate.json#/$defs/item",
                                     "title": "Item placed",
                                     "description": "The item placed to create the block"
                                 },
                                 "location": {
-                                    "$ref": "./shared/predicate.json#/definitions/location",
+                                    "$ref": "./shared/predicate.json#/$defs/location",
                                     "title": "Location of block",
                                     "description": "The location at which the block is placed"
                                 },
@@ -718,7 +718,7 @@
                             "type": "object",
                             "properties": {
                                 "entity": {
-                                    "$ref": "./shared/predicate.json#/definitions/entity",
+                                    "$ref": "./shared/predicate.json#/$defs/entity",
                                     "title": "The entity summmoned"
                                 }
                             }
@@ -769,11 +769,11 @@
                             "type": "object",
                             "properties": {
                                 "villager": {
-                                    "$ref": "./shared/predicate.json#/definitions/entity",
+                                    "$ref": "./shared/predicate.json#/$defs/entity",
                                     "title": "The villager traded with"
                                 },
                                 "item": {
-                                    "$ref": "./shared/predicate.json#/definitions/item",
+                                    "$ref": "./shared/predicate.json#/$defs/item",
                                     "title": "The item which was purchased"
                                 }
                             }

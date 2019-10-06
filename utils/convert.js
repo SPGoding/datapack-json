@@ -13,7 +13,7 @@ const registriesJson = JSON.parse(fs.readFileSync(join(__dirname, './registries.
 
 function convert(keyName, fileName) {
     const ans = {
-        $schema: 'http://json-schema.org/draft-07/schema',
+        $schema: 'https://json-schema.org/draft/2019-09/schema',
         $id: `https://raw.githubusercontent.com/SPGoding/datapack-json/master/src/shared/${fileName}.json`,
         type: 'string',
         enum: []
