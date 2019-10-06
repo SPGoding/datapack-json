@@ -1,3 +1,8 @@
+# [v1.3.7](https://github.com/SPGoding/datapack-json/compare/v1.3.6...v1.3.7) (2019-10-06)
+
+## 🐛 Bug Fixes
+- [`3e4afc3`](https://github.com/SPGoding/datapack-json/commit/3e4afc3)  Support item tags in the item predicate (Issues: [`#16`](https://github.com/SPGoding/datapack-json/issues/16))
+
 # [v1.3.6](https://github.com/SPGoding/datapack-json/compare/v1.3.5...v1.3.6) (2019-10-05)
 
 ## 🐛 Bug Fixes
