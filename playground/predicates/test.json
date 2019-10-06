@@ -13,7 +13,7 @@
                 "equipment": {
                     "mainhand": {
                         "count": 1,
-                        "item": "minecraft:air"
+                        "tag": "minecraft:logs"
                     }
                 },
                 "type": "#minecraft:skeletons"

@@ -380,6 +380,10 @@
                     "$ref": "./item_name.json",
                     "title": "The item ID"
                 },
+                "tag": {
+                    "$ref": "./namespaced_id.json",
+                    "title": "The item tag where this item should be"
+                },
                 "data": {
                     "type": "number",
                     "minimum": 0,
