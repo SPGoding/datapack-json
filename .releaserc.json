@@ -12,7 +12,7 @@
             "@semantic-release/github",
             {
                 "assets": "datapack-json.vsix",
-                "releasedLabels": [":rocket: released"]
+                "releasedLabels": [":ok_hand: resolved", ":rocket: released"]
             }
         ],
         "@semantic-release/npm",
