@@ -11,7 +11,8 @@
         [
             "@semantic-release/github",
             {
-                "assets": "datapack-json.vsix"
+                "assets": "datapack-json.vsix",
+                "releasedLabels": [":rocket: released"]
             }
         ],
         "@semantic-release/npm",
