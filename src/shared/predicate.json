@@ -384,12 +384,6 @@
                     "$ref": "./namespaced_id.json",
                     "title": "The item tag where this item should be"
                 },
-                "data": {
-                    "type": "number",
-                    "minimum": 0,
-                    "maximum": 15,
-                    "title": "The item metadata"
-                },
                 "durability": {
                     "$ref": "./range.json",
                     "title": "The remaining durability"
