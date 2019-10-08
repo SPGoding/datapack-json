@@ -25,7 +25,7 @@ A [VSCode](https://code.visualstudio.com) extension and NPM package providing JS
 
 0. Install [VSCode](https://code.visualstudio.com) if you haven't got it in your computer.
 1. Download and install this extension on [VSCode Marketplace](https://marketplace.visualstudio.com/items?itemName=SPGoding.datapack-json).
-    - Alternatives, you can search `SPGoding.datapack-json` in the sidebar and install it.
+    - Alternatively, you can search `SPGoding.datapack-json` in the sidebar and install it.
 2. Open VSCode in your datapack folder (`.minecraft/saves/<world>/datapacks/<your datapack folder>`). You can do this by right-clicking the folder and select 'Open with Code'.
 
 # Installation via NPM (for Projects)
