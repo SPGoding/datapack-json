@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:generic",
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "minecraft:acacia_boat",
+                    "functions": [
+                        {
+                            "function": "minecraft:set_name",
+                            "name": {
+                                "nbt": "a",
+                                "storage": "test:"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

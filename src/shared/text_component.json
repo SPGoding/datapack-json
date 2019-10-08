@@ -202,7 +202,8 @@
                             ],
                             "not": {
                                 "required": [
-                                    "entity"
+                                    "entity",
+                                    "storage"
                                 ]
                             }
                         },
@@ -218,7 +219,26 @@
                             ],
                             "not": {
                                 "required": [
-                                    "block"
+                                    "block",
+                                    "storage"
+                                ]
+                            }
+                        },
+                        {
+                            "properties": {
+                                "storage": {
+                                    "type": "string",
+                                    "title": "The namespaced ID of the storage",
+                                    "pattern": "^([a-z0-9\\.\\-_]+:)?([a-z0-9\\.\\-_]+/)*[a-z0-9\\.\\-_]*$"
+                                }
+                            },
+                            "required": [
+                                "storage"
+                            ],
+                            "not": {
+                                "required": [
+                                    "block",
+                                    "entity"
                                 ]
                             }
                         }
@@ -244,6 +264,7 @@
                 "keybind": {},
                 "nbt": {},
                 "entity": {},
+                "storage": {},
                 "block": {},
                 "interpret": {},
                 "extra": {
