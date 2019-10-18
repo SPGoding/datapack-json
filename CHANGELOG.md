@@ -1,3 +1,12 @@
+# [v2.0.0](https://github.com/SPGoding/datapack-json/compare/v1.3.7...v2.0.0) (2019-10-18)
+
+## 🐛 Bug Fixes
+- [`7c0c636`](https://github.com/SPGoding/datapack-json/commit/7c0c636)  Remove unwanted &#x27;data&#x27; param in item predicate (Issues: [`#18`](https://github.com/SPGoding/datapack-json/issues/18))
+- [`267f4b1`](https://github.com/SPGoding/datapack-json/commit/267f4b1)  Add support for &#x27;storage&#x27; in chat component (Issues: [`#19`](https://github.com/SPGoding/datapack-json/issues/19))
+
+## 💥 Breaking Changes
+- [`9270e92`](https://github.com/SPGoding/datapack-json/commit/9270e92)  Support JSON schema draft 2019-09 (Issues: [`#17`](https://github.com/SPGoding/datapack-json/issues/17))
+
 # [v1.3.7](https://github.com/SPGoding/datapack-json/compare/v1.3.6...v1.3.7) (2019-10-06)
 
 ## 🐛 Bug Fixes
