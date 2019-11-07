@@ -6,76 +6,105 @@
     "title": "Root tag",
     "properties": {
         "type": {
-            "title": "The type of the recipe"
+            "title": "The type of the recipe",            
+            "enum": [
+                "minecraft:crafting_shaped",
+                "minecraft:crafting_shapeless",
+                "minecraft:blasting",
+                "minecraft:campfire_cooking",
+                "minecraft:smelting",
+                "minecraft:smoking"
+            ]
         },
         "group": {
             "type": "string",
             "title": "All recipes that have the same 'group' will be shown together in the recipe book"
         }
     },
-    "oneOf": [
-        {
-            "additionalProperties": false,
+    "required": [
+        "type"
+    ],
+    "if": {
+        "properties": {
+            "type": {
+                "enum": [
+                    "minecraft:crafting_shaped"
+                ]
+            }
+        },
+        "required": [
+            "type"
+        ]
+    },
+    "then": {
+        "additionalProperties": false,
+        "properties": {
+            "type": {
+                "description": "Recipe for shaped crafting"
+            },
+            "group": {},
+            "pattern": {
+                "type": "array",
+                "title": "The shape that items must be put in",
+                "minItems": 1,
+                "maxItems": 3,
+                "items": {
+                    "type": "string",
+                    "pattern": "^.{1,3}$"
+                }
+            },
+            "key": {
+                "type": "object",
+                "title": "All keys used in 'pattern'",
+                "minItems": 0,
+                "maxItems": 9,
+                "additionalProperties": {
+                    "oneOf": [
+                        {
+                            "$ref": "#/$defs/input",
+                            "description": "The single character representing this item"
+                        },
+                        {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/input"
+                            },
+                            "description": "The single character representing these possible items"
+                        }
+                    ]
+                },
+                "propertyNames": {
+                    "type": "string",
+                    "pattern": "^.$"
+                }
+            },
+            "result": {
+                "$ref": "#/$defs/craft_result"
+            }
+        },
+        "required": [
+            "pattern",
+            "key",
+            "result"
+        ]
+    },
+    "else": {
+        "if": {
             "properties": {
                 "type": {
                     "enum": [
-                        "crafting_shaped"
-                    ],
-                    "description": "Recipe for shaped crafting"
-                },
-                "group": {},
-                "pattern": {
-                    "type": "array",
-                    "title": "The shape that items must be put in",
-                    "minItems": 1,
-                    "maxItems": 3,
-                    "items": {
-                        "type": "string",
-                        "pattern": "^.{1,3}$"
-                    }
-                },
-                "key": {
-                    "type": "object",
-                    "title": "All keys used in 'pattern'",
-                    "minItems": 0,
-                    "maxItems": 9,
-                    "additionalProperties": {
-                        "oneOf": [
-                            {
-                                "$ref": "#/$defs/input",
-                                "description": "The single character representing this item"
-                            },
-                            {
-                                "type": "array",
-                                "items": {
-                                    "$ref": "#/$defs/input"
-                                },
-                                "description": "The single character representing these possible items"
-                            }
-                        ]
-                    },
-                    "propertyNames": {
-                        "type": "string",
-                        "pattern": "^.$"
-                    }
-                },
-                "result": {
-                    "$ref": "#/$defs/craft_result"
+                        "minecraft:crafting_shapeless"
+                    ]
                 }
             },
             "required": [
-                "pattern",
-                "key",
-                "result"
+                "type"
             ]
         },
-        {
+        "then": {
             "additionalProperties": false,
             "properties": {
-                "type": {
-                    "enum": [
-                        "crafting_shapeless"
-                    ],
+                "type": {                    
                     "description": "Recipe for shapeless crafting"
                 },
                 "group": {},
@@ -109,73 +138,81 @@
                 "result"
             ]
         },
-        {
-            "additionalProperties": false,
-            "properties": {
-                "type": {
-                    "oneOf": [
-                        {
-                            "enum": [
-                                "blasting"
-                            ],
-                            "description": "Recipe for blasting"
-                        },
-                        {
-                            "enum": [
-                                "campfire"
-                            ],
-                            "description": "Recipe for campfire"
-                        },
-                        {
-                            "enum": [
-                                "smelting"
-                            ],
-                            "description": "Recipe for smelting"
-                        },
-                        {
-                            "enum": [
-                                "smoking"
-                            ],
-                            "description": "Recipe for smoking"
-                        }
-                    ]
-                },
-                "group": {},
-                "ingredient": {
-                    "oneOf": [
-                        {
-                            "$ref": "#/$defs/input",
-                            "title": "An ingredient"
-                        },
-                        {
-                            "type": "array",
-                            "title": "List of possible ingredients",
-                            "items": {
-                                "$ref": "#/$defs/input"
+        "else": {
+            "if": {
+                "properties": {
+                    "type": {
+                        "oneOf": [
+                            {
+                                "enum": [
+                                    "minecraft:blasting"
+                                ]
+                            },
+                            {
+                                "enum": [
+                                    "minecraft:campfire_cooking"
+                                ]
+                            },
+                            {
+                                "enum": [
+                                    "minecraft:smelting"
+                                ]
+                            },
+                            {
+                                "enum": [
+                                    "minecraft:smoking"
+                                ]
                             }
-                        }
-                    ]
+                        ]
+                    }
                 },
-                "result": {
-                    "$ref": "./shared/item_name.json",
-                    "title": "The output item"
-                },
-                "experience": {
-                    "type": "number",
-                    "title": "The experience player will be given"
-                },
-                "cookingtime": {
-                    "type": "integer",
-                    "minimum": 0,
-                    "title": "The cook time in ticks"
-                }
+                "required": [
+                    "type"
+                ]
             },
-            "required": [
-                "ingredient",
-                "result"
-            ]
+            "then": {
+                "additionalProperties": false,
+                "properties": {
+                    "type": {                        
+                        "description": "Recipe for cooking"
+                    },
+                    "group": {},
+                    "ingredient": {
+                        "oneOf": [
+                            {
+                                "$ref": "#/$defs/input",
+                                "title": "An ingredient"
+                            },
+                            {
+                                "type": "array",
+                                "title": "List of possible ingredients",
+                                "items": {
+                                    "$ref": "#/$defs/input"
+                                }
+                            }
+                        ]
+                    },
+                    "result": {
+                        "$ref": "./shared/item_name.json",
+                        "title": "The output item"
+                    },
+                    "experience": {
+                        "type": "number",
+                        "title": "The experience player will be given"
+                    },
+                    "cookingtime": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "title": "The cook time in ticks"
+                    }
+                },
+                "required": [
+                    "ingredient",
+                    "result"
+                ]
+            }
         }
-    ],
+    },
     "$defs": {
         "input": {
             "type": "object",
@@ -218,8 +255,5 @@
                 "item"
             ]
         }
-    },
-    "required": [
-        "type"
-    ]
+    }
 }
