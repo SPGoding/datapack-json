@@ -1,3 +1,8 @@
+# [v2.0.1](https://github.com/SPGoding/datapack-json/compare/v2.0.0...v2.0.1) (2019-11-07)
+
+## 🐛 Bug Fixes
+- [`4996180`](https://github.com/SPGoding/datapack-json/commit/4996180)  Fix bugs about recipe schema (Issues: [`#23`](https://github.com/SPGoding/datapack-json/issues/23) [`#24`](https://github.com/SPGoding/datapack-json/issues/24))
+
 # [v2.0.0](https://github.com/SPGoding/datapack-json/compare/v1.3.7...v2.0.0) (2019-10-18)
 
 ## 🐛 Bug Fixes
