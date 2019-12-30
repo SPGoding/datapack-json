@@ -1,3 +1,8 @@
+# [v2.0.2](https://github.com/SPGoding/datapack-json/compare/v2.0.1...v2.0.2) (2019-12-30)
+
+## 🐛 Bug Fixes
+- [`083a16b`](https://github.com/SPGoding/datapack-json/commit/083a16b)  Fix schema for entity predicate
+
 # [v2.0.1](https://github.com/SPGoding/datapack-json/compare/v2.0.0...v2.0.1) (2019-11-07)
 
 ## 🐛 Bug Fixes
