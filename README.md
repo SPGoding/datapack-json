@@ -20,8 +20,6 @@ DHP is splitted into two parts: [the JSON part](https://marketplace.visualstudio
 | [DHP (JSON)](https://github.com/SPGoding/datapack-json) | [![VSCode Marketplace](https://img.shields.io/visual-studio-marketplace/v/SPGoding.datapack-json.svg?logo=visual-studio-code&style=flat-square)](https://marketplace.visualstudio.com/items?itemName=SPGoding.datapack-json) | [![VSCode Marketplace Downloads](https://img.shields.io/visual-studio-marketplace/d/SPGoding.datapack-json.svg?logo=visual-studio-code&style=flat-square)](https://marketplace.visualstudio.com/items?itemName=SPGoding.datapack-json) |
 | [DHP (MCF)](https://github.com/SPGoding/datapack-language-server) | [![VSCode Marketplace](https://img.shields.io/visual-studio-marketplace/v/SPGoding.datapack-language-server.svg?logo=visual-studio-code&style=flat-square)](https://marketplace.visualstudio.com/items?itemName=SPGoding.datapack-language-server) | [![VSCode Marketplace Downloads](https://img.shields.io/visual-studio-marketplace/d/SPGoding.datapack-language-server.svg?logo=visual-studio-code&style=flat-square)](https://marketplace.visualstudio.com/items?itemName=SPGoding.datapack-language-server) |
 
-DHP (JSON) is a [VSCode](https://code.visualstudio.com) extension and NPM package providing JSON schemas for _Minecraft_: Java Edition 1.15.1 datapack JSON files. Information about json schemas can be found at [json-schema.org](http://json-schema.org/).
-
 # Design choices
 
 -   The use of the `minecraft:` namespace is mandatory anywhere it can be used.

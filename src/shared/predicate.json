@@ -90,35 +90,23 @@
         },
         "distance": {
             "type": "object",
-            "anyOf": [
-                {
-                    "properties": {
-                        "absolute": {
-                            "$ref": "./range.json"
-                        }
-                    }
+            "properties": {
+                "absolute": {
+                    "$ref": "./range.json"
                 },
-                {
-                    "properties": {
-                        "x": {
-                            "$ref": "./range.json"
-                        },
-                        "y": {
-                            "$ref": "./range.json"
-                        },
-                        "z": {
-                            "$ref": "./range.json"
-                        }
-                    }
+                "x": {
+                    "$ref": "./range.json"
                 },
-                {
-                    "properties": {
-                        "horizontal": {
-                            "$ref": "./range.json"
-                        }
-                    }
+                "y": {
+                    "$ref": "./range.json"
+                },
+                "z": {
+                    "$ref": "./range.json"
+                },
+                "horizontal": {
+                    "$ref": "./range.json"
                 }
-            ],
+            },
             "additionalProperties": false
         },
         "effect": {

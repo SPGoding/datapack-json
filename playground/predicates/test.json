@@ -16,7 +16,13 @@
                         "tag": "minecraft:logs"
                     }
                 },
-                "type": "#minecraft:skeletons"
+                "type": "#minecraft:skeletons",
+                "distance": {
+                    "x": {
+                        "max": 0
+                    },
+                    "y": 2
+                }
             }
         }
     ]
