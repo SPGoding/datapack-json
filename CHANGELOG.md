@@ -1,3 +1,8 @@
+# [v2.0.3](https://github.com/SPGoding/datapack-json/compare/v2.0.2...v2.0.3) (2020-01-04)
+
+## 🐛 Bug Fixes
+- [`e203ddc`](https://github.com/SPGoding/datapack-json/commit/e203ddc)  Fix not allowing conditions for some functions
+
 # [v2.0.2](https://github.com/SPGoding/datapack-json/compare/v2.0.1...v2.0.2) (2019-12-30)
 
 ## 🐛 Bug Fixes
