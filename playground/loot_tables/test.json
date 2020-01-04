@@ -13,7 +13,21 @@
                             "name": {
                                 "nbt": "a",
                                 "storage": "test:"
-                            }
+                            },
+                            "conditions": [
+                                {
+                                    "condition": "minecraft:entity_scores"
+                                }
+                            ]
+                        },
+                        {
+                            "function": "minecraft:set_nbt",
+                            "tag": "{}",
+                            "conditions": [
+                                {
+                                    
+                                }
+                            ]
                         }
                     ]
                 }

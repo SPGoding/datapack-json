@@ -151,9 +151,9 @@
                         "damage": {
                             "$ref": "#/$defs/random",
                             "description": "The data value or a random value in a range to set the 'durability' to. 0.35 means 35% durability left"
-                        }
-                    },
-                    "conditions": {}
+                        },
+                        "conditions": {}
+                    }
                 },
                 {
                     "additionalProperties": false,
@@ -169,9 +169,9 @@
                             "type": "string",
                             "title": "NBT string",
                             "description": "A string of nbt, which is escaped using the json format (a \\ in front of each \\ or \")"
-                        }
-                    },
-                    "conditions": {}
+                        },
+                        "conditions": {}
+                    }
                 },
                 {
                     "additionalProperties": false,
