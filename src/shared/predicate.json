@@ -38,6 +38,13 @@
                 "source_entity": {
                     "$ref": "#/$defs/entity",
                     "title": "Entity which did the hitting"
+                },
+                "direct_entity": {
+                    "$ref": "#/$defs/entity",
+                    "title": "Entity which did the hitting"
+                },
+                "type": {
+                    "$ref": "#/$defs/damage_flags"
                 }
             },
             "additionalProperties": false

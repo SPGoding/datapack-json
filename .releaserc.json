@@ -12,7 +12,7 @@
             "@semantic-release/github",
             {
                 "assets": "datapack-json.vsix",
-                "releasedLabels": [":ok_hand: resolved", ":rocket: released"]
+                "releasedLabels": [":rocket: released"]
             }
         ],
         "@semantic-release/npm",
@@ -22,5 +22,6 @@
                 "message": ":bookmark: v${nextRelease.version}\n\n[skip ci]\n\nhttps://github.com/SPGoding/datapack-json/releases/tag/${nextRelease.gitTag}"
             }
         ]
-    ]
+    ],
+    "branches": "released"
 }

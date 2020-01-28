@@ -8,6 +8,17 @@
             "conditions": {
                 "block": "minecraft:acacia_button"
             }
+        },
+        "c2": {
+            "trigger": "minecraft:entity_hurt_player",
+            "conditions": {
+                "damage": {
+                    "type": {
+                        "bypasses_armor": true
+                    },
+                    "dealt": 1
+                }
+            }
         }
     }
 }
