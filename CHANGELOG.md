@@ -1,3 +1,8 @@
+# [v2.0.5](https://github.com/SPGoding/datapack-json/compare/v2.0.4...v2.0.5) (2020-02-01)
+
+## 🐛 Bug Fixes
+- [`eb5be92`](https://github.com/SPGoding/datapack-json/commit/eb5be92)  Add missing is_lightning damage predicate (Issues: [`#34`](https://github.com/SPGoding/datapack-json/issues/34))
+
 # [v2.0.4](https://github.com/SPGoding/datapack-json/compare/v2.0.3...v2.0.4) (2020-01-28)
 
 ## 🐛 Bug Fixes
