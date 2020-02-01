@@ -67,6 +67,9 @@
                 "is_fire": {
                     "type": "boolean"
                 },
+                "is_lightning": {
+                    "type": "boolean"
+                },
                 "is_magic": {
                     "type": "boolean"
                 },
