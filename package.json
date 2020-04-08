@@ -1,6 +1,6 @@
 {
     "name": "datapack-json",
-    "version": "2.0.5",
+    "version": "2.0.6",
     "publisher": "SPGoding",
     "engines": {
         "vscode": "^1.22.0"

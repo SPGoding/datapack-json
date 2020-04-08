@@ -1,3 +1,8 @@
+# [v2.0.6](https://github.com/SPGoding/datapack-json/compare/v2.0.5...v2.0.6) (2020-04-08)
+
+## 🐛 Bug Fixes
+- [`f44c3ba`](https://github.com/SPGoding/datapack-json/commit/f44c3ba)  Add missing properties (Issues: [`#36`](https://github.com/SPGoding/datapack-json/issues/36))
+
 # [v2.0.5](https://github.com/SPGoding/datapack-json/compare/v2.0.4...v2.0.5) (2020-02-01)
 
 ## 🐛 Bug Fixes
