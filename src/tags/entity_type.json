@@ -12,16 +12,13 @@
         "values": {
             "type": "array",
             "items": {
-                "oneOf": [
-                    {
-                        "$ref": "../shared/entity_name.json",
-                        "description": "An entity ID"
-                    },
-                    {
-                        "$ref": "../shared/tag_id.json",
-                        "description": "An entity type tag"
-                    }
-                ]
+                "type": "string",
+                "parser": "Identity",
+                "params": {
+                    "registry": "minecraft:entity_type",
+                    "allowTag": true
+                },
+                "description": "An ID of an entity or an entity tag"
             },
             "title": "A list of entity types"
         }

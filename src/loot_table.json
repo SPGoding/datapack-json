@@ -107,7 +107,11 @@
                             "description": "Copy the block states to BlockStateTag."
                         },
                         "block": {
-                            "$ref": "./shared/block_name.json",
+                            "type": "string",
+                            "parser": "Identity",
+                            "params": {
+                                "registry": "minecraft:block"
+                            },
                             "description": "The block name"
                         },
                         "properties": {
@@ -287,7 +291,11 @@
                         "enchantments": {
                             "type": "array",
                             "items": {
-                                "$ref": "./shared/enchantment_name.json"
+                                "type": "string",
+                                "parser": "Identity",
+                                "params": {
+                                    "registry": "minecraft:enchantment"
+                                }
                             },
                             "title": "Enchantments",
                             "description": "The enchantments to choose from to apply to the item"
@@ -560,7 +568,11 @@
                             "description": "Apply one of predefined bonus formulas"
                         },
                         "enchantment": {
-                            "$ref": "./shared/enchantment_name.json",
+                            "type": "string",
+                            "parser": "Identity",
+                            "params": {
+                                "registry": "minecraft:enchantment"
+                            },
                             "description": "ID for enchantment level used for calculation"
                         },
                         "formula": {
@@ -701,8 +713,11 @@
                             "description": "Set BlockEntityTag.LootTable and BlockEntityTag.LootPoolSeed tags",
                             "properties": {
                                 "name": {
-                                    "$ref": "./shared/namespaced_id.json",
-                                    "description": "ID of loot table"
+                                    "type": "string",
+                                    "parser": "Identity",
+                                    "params": {
+                                        "registry": "$lootTables"
+                                    }
                                 },
                                 "seed": {
                                     "type": "integer",
@@ -734,7 +749,11 @@
                             "description": "This entry will give an item (if the conditions pass). The item type is defined in \"name\""
                         },
                         "name": {
-                            "$ref": "./shared/item_name.json",
+                            "type": "string",
+                            "parser": "Identity",
+                            "params": {
+                                "registry": "minecraft:item"
+                            },
                             "title": "Item",
                             "description": "The item to give"
                         }
@@ -751,7 +770,11 @@
                             "description": "This entry will give the result of another loot table specified in 'name'. These cannot be self referencing in any way, if they are self referencing, they don't run"
                         },
                         "name": {
-                            "$ref": "./shared/namespaced_id.json",
+                            "type": "string",
+                            "parser": "Identity",
+                            "params": {
+                                "registry": "$lootTables"
+                            },
                             "title": "Loot table",
                             "description": "The loot table to be given"
                         }
@@ -852,7 +875,11 @@
                             "description": "Adds contents of item tag"
                         },
                         "name": {
-                            "$ref": "./shared/namespaced_id.json",
+                            "type": "string",
+                            "parser": "Identity",
+                            "params": {
+                                "registry": "$tags/items"
+                            },
                             "title": "Item tag",
                             "description": "ID of the item tag"
                         },

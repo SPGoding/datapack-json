@@ -14,7 +14,11 @@
                     "additionalProperties": false,
                     "properties": {
                         "item": {
-                            "$ref": "./shared/item_name.json",
+                            "type": "string",
+                            "parser": "Identity",
+                            "params": {
+                                "registry": "minecraft:item"
+                            },
                             "title": "Item name",
                             "description": "The name of the item to use as the icon."
                         },
@@ -46,7 +50,11 @@
                     ]
                 },
                 "background": {
-                    "$ref": "./shared/namespaced_id.json",
+                    "type": "string",
+                    "parser": "Identity",
+                    "params": {
+                        "allowUnknownValue": true
+                    },
                     "title": "Page background texture (Root advancement only [No parent])"
                 },
                 "show_toast": {
@@ -67,7 +75,11 @@
             }
         },
         "parent": {
-            "$ref": "./shared/namespaced_id.json",
+            "type": "string",
+            "parser": "Identity",
+            "params": {
+                "registry": "$advancements"
+            },
             "title": "Parent advancement (if not specified and \"display\" is, it will create a new page)"
         },
         "criteria": {
@@ -102,7 +114,11 @@
                     "title": "Recipes",
                     "description": "A list of recipes to give to the player. Uses the same name locator as the `/recipe` command",
                     "items": {
-                        "$ref": "./shared/namespaced_id.json",
+                        "type": "string",
+                        "parser": "Identity",
+                        "params": {
+                            "registry": "$recipes"
+                        },
                         "title": "A single recipe"
                     }
                 },
@@ -111,8 +127,12 @@
                     "title": "Loot tables",
                     "description": "A list of loot tables to give to the player. Uses the path to the loot table (with the first folder within the loot_tables folder being the namespace)",
                     "items": {
-                        "title": "A single loot table",
-                        "$ref": "./shared/namespaced_id.json"
+                        "type": "string",
+                        "parser": "Identity",
+                        "params": {
+                            "registry": "$lootTables"
+                        },
+                        "title": "A single loot table"
                     }
                 },
                 "experience": {
@@ -121,9 +141,13 @@
                     "description": "Experience to give to the player"
                 },
                 "function": {
+                    "type": "string",
+                    "parser": "Identity",
+                    "params": {
+                        "registry": "$functions"
+                    },
                     "title": "A function to run as the player",
-                    "description": "A single function to run as the player. Uses the path to the function (with the first folder within thefunction folder being the namespace)",
-                    "$ref": "./shared/namespaced_id.json"
+                    "description": "A single function to run as the player. Uses the path to the function (with the first folder within thefunction folder being the namespace)"
                 }
             }
         }
@@ -192,7 +216,11 @@
                             "type": "object",
                             "properties": {
                                 "potion": {
-                                    "$ref": "./shared/potion_name.json",
+                                    "type": "string",
+                                    "parser": "Identity",
+                                    "params": {
+                                        "registry": "minecraft:potion"
+                                    },
                                     "title": "The potion brewed"
                                 }
                             }
@@ -217,11 +245,19 @@
                             "description": "All of these conditions must pass for the criteria to be activated",
                             "properties": {
                                 "to": {
-                                    "$ref": "./shared/dimension_name.json",
+                                    "type": "string",
+                                    "parser": "Identity",
+                                    "params": {
+                                        "registry": "minecraft:dimension_type"
+                                    },
                                     "title": "Entered dimension"
                                 },
                                 "from": {
-                                    "$ref": "./shared/dimension_name.json",
+                                    "type": "string",
+                                    "parser": "Identity",
+                                    "params": {
+                                        "registry": "minecraft:dimension_type"
+                                    },
                                     "title": "Exited dimension"
                                 }
                             }

@@ -97,7 +97,11 @@
                     "title": "Reference another predicate"
                 },
                 "name": {
-                    "$ref": "./shared/namespaced_id.json",
+                    "type": "string",
+                    "parser": "Identity",
+                    "params": {
+                        "registry": "$predicates"
+                    },
                     "title": "ID of the predicate"
                 }
             }
@@ -128,7 +132,11 @@
                     "description": "Check properties of block state"
                 },
                 "block": {
-                    "$ref": "./shared/block_name.json",
+                    "type": "string",
+                    "parser": "Identity",
+                    "params": {
+                        "registry": "minecraft:block"
+                    },
                     "title": "Block ID",
                     "description": "ID of block. Test will fail if broken block doesn't match"
                 },
@@ -217,7 +225,11 @@
                     "description": "Passes with probability picked from table, indexed by enchantment level"
                 },
                 "enchantment": {
-                    "$ref": "./shared/enchantment_name.json",
+                    "type": "string",
+                    "parser": "Identity",
+                    "params": {
+                        "registry": "minecraft:enchantment"
+                    },
                     "title": "Enchantment",
                     "description": "ID of enchantment"
                 },

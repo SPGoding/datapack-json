@@ -1,19 +1,33 @@
 {
-    "$comment": "Some descriptions in this file are from https://github.com/skylinerw/guides/blob/master/java/recipes.md",
+    "$attribution": "Some text descriptions in this file are from https://github.com/skylinerw/guides/blob/master/java/recipes.md. License: https://github.com/skylinerw/guides/blob/master/LICENSE.md",
     "$schema": "https://json-schema.org/draft/2019-09/schema",
     "$id": "https://raw.githubusercontent.com/SPGoding/datapack-json/master/src/recipe.json",
     "type": "object",
     "title": "Root tag",
     "properties": {
         "type": {
-            "title": "The type of the recipe",            
+            "title": "The type of the recipe",
             "enum": [
-                "minecraft:crafting_shaped",
-                "minecraft:crafting_shapeless",
                 "minecraft:blasting",
                 "minecraft:campfire_cooking",
+                "minecraft:crafting_shaped",
+                "minecraft:crafting_shapeless",
+                "minecraft:crafting_special_armordye",
+                "minecraft:crafting_special_bannerduplicate",
+                "minecraft:crafting_special_bookcloning",
+                "minecraft:crafting_special_firework_rocket",
+                "minecraft:crafting_special_firework_star",
+                "minecraft:crafting_special_firework_star_fade",
+                "minecraft:crafting_special_mapcloning",
+                "minecraft:crafting_special_mapextending",
+                "minecraft:crafting_special_repairitem",
+                "minecraft:crafting_special_shielddecoration",
+                "minecraft:crafting_special_shulkerboxcoloring",
+                "minecraft:crafting_special_suspiciousstew",
+                "minecraft:crafting_special_tippedarrow",
                 "minecraft:smelting",
-                "minecraft:smoking"
+                "minecraft:smoking",
+                "minecraft:stonecutting"
             ]
         },
         "group": {
@@ -104,7 +118,7 @@
         "then": {
             "additionalProperties": false,
             "properties": {
-                "type": {                    
+                "type": {
                     "description": "Recipe for shapeless crafting"
                 },
                 "group": {},
@@ -142,27 +156,11 @@
             "if": {
                 "properties": {
                     "type": {
-                        "oneOf": [
-                            {
-                                "enum": [
-                                    "minecraft:blasting"
-                                ]
-                            },
-                            {
-                                "enum": [
-                                    "minecraft:campfire_cooking"
-                                ]
-                            },
-                            {
-                                "enum": [
-                                    "minecraft:smelting"
-                                ]
-                            },
-                            {
-                                "enum": [
-                                    "minecraft:smoking"
-                                ]
-                            }
+                        "enum": [
+                            "minecraft:blasting",
+                            "minecraft:campfire_cooking",
+                            "minecraft:smelting",
+                            "minecraft:smoking"
                         ]
                     }
                 },
@@ -173,7 +171,7 @@
             "then": {
                 "additionalProperties": false,
                 "properties": {
-                    "type": {                        
+                    "type": {
                         "description": "Recipe for cooking"
                     },
                     "group": {},
@@ -193,7 +191,11 @@
                         ]
                     },
                     "result": {
-                        "$ref": "./shared/item_name.json",
+                        "type": "string",
+                        "parser": "Identity",
+                        "params": {
+                            "registry": "minecraft:item"
+                        },
                         "title": "The output item"
                     },
                     "experience": {
@@ -210,6 +212,83 @@
                     "ingredient",
                     "result"
                 ]
+            },
+            "else": {
+                "if": {
+                    "properties": {
+                        "type": {
+                            "enum": [
+                                "minecraft:stonecutting"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "type"
+                    ]
+                },
+                "then": {
+                    "additionalProperties": false,
+                    "properties": {
+                        "type": {
+                            "description": "Recipe for stone cutting"
+                        },
+                        "group": {},
+                        "ingredient": {
+                            "oneOf": [
+                                {
+                                    "$ref": "#/$defs/input",
+                                    "title": "An ingredient"
+                                },
+                                {
+                                    "type": "array",
+                                    "title": "List of possible ingredients",
+                                    "items": {
+                                        "$ref": "#/$defs/input"
+                                    }
+                                }
+                            ]
+                        },
+                        "result": {
+                            "type": "string",
+                            "parser": "Identity",
+                            "params": {
+                                "registry": "minecraft:item"
+                            },
+                            "title": "The output item"
+                        },
+                        "count": {
+                            "type": "number",
+                            "title": "The amount of the result item"
+                        }
+                    },
+                    "required": [
+                        "ingredient",
+                        "result"
+                    ]
+                },
+                "else": {
+                    "additionalProperties": false,
+                    "properties": {
+                        "type": {
+                            "enum": [
+                                "minecraft:crafting_special_armordye",
+                                "minecraft:crafting_special_bannerduplicate",
+                                "minecraft:crafting_special_bookcloning",
+                                "minecraft:crafting_special_firework_rocket",
+                                "minecraft:crafting_special_firework_star",
+                                "minecraft:crafting_special_firework_star_fade",
+                                "minecraft:crafting_special_mapcloning",
+                                "minecraft:crafting_special_mapextending",
+                                "minecraft:crafting_special_repairitem",
+                                "minecraft:crafting_special_shielddecoration",
+                                "minecraft:crafting_special_shulkerboxcoloring",
+                                "minecraft:crafting_special_suspiciousstew",
+                                "minecraft:crafting_special_tippedarrow"
+                            ],
+                            "description": "Special crafting recipe"
+                        }
+                    }
+                }
             }
         }
     },
@@ -221,7 +300,11 @@
                     "additionalProperties": false,
                     "properties": {
                         "item": {
-                            "$ref": "./shared/item_name.json",
+                            "type": "string",
+                            "parser": "Identity",
+                            "params": {
+                                "registry": "minecraft:item"
+                            },
                             "title": "The input item"
                         }
                     }
@@ -230,7 +313,11 @@
                     "additionalProperties": false,
                     "properties": {
                         "tag": {
-                            "$ref": "./shared/namespaced_id.json",
+                            "type": "string",
+                            "parser": "Identity",
+                            "params": {
+                                "registry": "$tags/items"
+                            },
                             "title": "An datapack item tag",
                             "description": "All items defined in the tag are acceptable"
                         }
@@ -243,7 +330,11 @@
             "additionalProperties": false,
             "properties": {
                 "item": {
-                    "$ref": "./shared/item_name.json",
+                    "type": "string",
+                    "parser": "Identity",
+                    "params": {
+                        "registry": "minecraft:item"
+                    },
                     "title": "The output item"
                 },
                 "count": {

@@ -12,16 +12,13 @@
         "values": {
             "type": "array",
             "items": {
-                "oneOf": [
-                    {
-                        "$ref": "../shared/item_name.json",
-                        "description": "An item ID"
-                    },
-                    {
-                        "$ref": "../shared/tag_id.json",
-                        "description": "An item tag"
-                    }
-                ]
+                "type": "string",
+                "parser": "Identity",
+                "params": {
+                    "registry": "minecraft:item",
+                    "allowTag": true
+                },
+                "description": "An ID of an item or an item tag"
             },
             "title": "A list of items"
         }

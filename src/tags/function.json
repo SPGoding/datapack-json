@@ -12,16 +12,13 @@
         "values": {
             "type": "array",
             "items": {
-                "oneOf": [
-                    {
-                        "$ref": "../shared/namespaced_id.json",
-                        "description": "A function resource location"
-                    },
-                    {
-                        "$ref": "../shared/tag_id.json",
-                        "description": "A function tag"
-                    }
-                ]
+                "type": "string",
+                "parser": "Identity",
+                "params": {
+                    "registry": "$functions",
+                    "allowTag": true
+                },
+                "description": "An ID of a function or a function tag"
             },
             "title": "A list of functions"
         }

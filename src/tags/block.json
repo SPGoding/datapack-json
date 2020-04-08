@@ -12,16 +12,13 @@
         "values": {
             "type": "array",
             "items": {
-                "oneOf": [
-                    {
-                        "$ref": "../shared/block_name.json",
-                        "description": "A block ID"
-                    },
-                    {
-                        "$ref": "../shared/tag_id.json",
-                        "description": "A block tag"
-                    }
-                ]
+                "type": "string",
+                "parser": "Identity",
+                "params": {
+                    "registry": "minecraft:block",
+                    "allowTag": true
+                },
+                "description": "An ID of a block or a block tag"
             },
             "title": "A list of blocks"
         }

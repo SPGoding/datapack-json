@@ -12,16 +12,13 @@
         "values": {
             "type": "array",
             "items": {
-                "oneOf": [
-                    {
-                        "$ref": "../shared/fluid_name.json",
-                        "description": "A fluid ID"
-                    },
-                    {
-                        "$ref": "../shared/tag_id.json",
-                        "description": "A fluid tag"
-                    }
-                ]
+                "type": "string",
+                "parser": "Identity",
+                "params": {
+                    "registry": "minecraft:fluid",
+                    "allowTag": true
+                },
+                "description": "An ID of a fluid or a fluid tag"
             },
             "title": "A list of fluids"
         }

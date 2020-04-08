@@ -5,7 +5,11 @@
         "block": {
             "properties": {
                 "block": {
-                    "$ref": "./block_name.json",
+                    "type": "string",
+                    "parser": "Identity",
+                    "params": {
+                        "registry": "minecraft:block"
+                    },
                     "title": "The block name"
                 },
                 "state": {
@@ -123,7 +127,11 @@
             "type": "object",
             "title": "The effects applied. Each key is the effect name",
             "propertyNames": {
-                "$ref": "./effect_name.json"
+                "type": "string",
+                "parser": "Identity",
+                "params": {
+                    "registry": "minecraft:mob_effect"
+                }
             },
             "additionalProperties": {
                 "type": "object",
@@ -186,6 +194,17 @@
                         ]
                     }
                 },
+                "fishing_hook": {
+                    "type": "object",
+                    "title": "Checks fishing hook properties",
+                    "additionalProperties": false,
+                    "properties": {
+                        "in_open_water": {
+                            "type": "boolean",
+                            "description": "Checks whether the fishing hook is in open water or not"
+                        }
+                    }
+                },
                 "location": {
                     "$ref": "#/$defs/location",
                     "title": "Location",
@@ -196,16 +215,13 @@
                     "title": "The nbt of the entity"
                 },
                 "type": {
-                    "oneOf": [
-                        {
-                            "$ref": "./entity_name.json",
-                            "title": "The type of the entity"
-                        },
-                        {
-                            "$ref": "./tag_id.json",
-                            "title": "The entity type tag where the entity should be"
-                        }
-                    ]
+                    "type": "string",
+                    "parser": "Identity",
+                    "params": {
+                        "registry": "minecraft:entity_type",
+                        "allowTag": true
+                    },
+                    "title": "The type of the entity"
                 },
                 "team": {
                     "type": "string",
@@ -236,7 +252,11 @@
                                 ]
                             },
                             "propertyNames": {
-                                "$ref": "./namespaced_id.json"
+                                "type": "string",
+                                "parser": "Identity",
+                                "params": {
+                                    "registry": "$advancements"
+                                }
                             }
                         },
                         "gamemode": {
@@ -259,7 +279,11 @@
                                 "title": "Whether or not the recipe is known to player"
                             },
                             "propertyNames": {
-                                "$ref": "./namespaced_id.json"
+                                "type": "string",
+                                "parser": "Identity",
+                                "params": {
+                                    "registry": "$recipes"
+                                }
                             }
                         },
                         "stats": {
@@ -283,12 +307,24 @@
                                     {
                                         "properties": {
                                             "type": {
-                                                "enum": [
-                                                    "minecraft:custom"
-                                                ]
+                                                "type": "string",
+                                                "parser": "Identity",
+                                                "params": {
+                                                    "summary": {
+                                                        "minecraft": {
+                                                            "custom": {
+                                                                "$": {}
+                                                            }
+                                                        }
+                                                    }
+                                                }
                                             },
                                             "stat": {
-                                                "$ref": "./custom_stat.json"
+                                                "type": "string",
+                                                "parser": "Identity",
+                                                "params": {
+                                                    "registry": "minecraft:custom_stat"
+                                                }
                                             }
                                         }
                                     },
@@ -304,7 +340,11 @@
                                                 ]
                                             },
                                             "stat": {
-                                                "$ref": "./item_name.json"
+                                                "type": "string",
+                                                "parser": "Identity",
+                                                "params": {
+                                                    "registry": "minecraft:item"
+                                                }
                                             }
                                         }
                                     },
@@ -316,7 +356,11 @@
                                                 ]
                                             },
                                             "stat": {
-                                                "$ref": "./block_name.json"
+                                                "type": "string",
+                                                "parser": "Identity",
+                                                "params": {
+                                                    "registry": "minecraft:block"
+                                                }
                                             }
                                         }
                                     },
@@ -329,7 +373,11 @@
                                                 ]
                                             },
                                             "stat": {
-                                                "$ref": "./entity_name.json"
+                                                "type": "string",
+                                                "parser": "Identity",
+                                                "params": {
+                                                    "registry": "minecraft:entity_type"
+                                                }
                                             }
                                         }
                                     }
@@ -375,11 +423,19 @@
         "item": {
             "properties": {
                 "item": {
-                    "$ref": "./item_name.json",
+                    "type": "string",
+                    "parser": "Identity",
+                    "params": {
+                        "registry": "minecraft:item"
+                    },
                     "title": "The item ID"
                 },
                 "tag": {
-                    "$ref": "./namespaced_id.json",
+                    "type": "string",
+                    "parser": "Identity",
+                    "params": {
+                        "registry": "$tags/items"
+                    },
                     "title": "The item tag where this item should be"
                 },
                 "durability": {
@@ -391,7 +447,11 @@
                     "title": "The number of items in the stack"
                 },
                 "potion": {
-                    "$ref": "./potion_name.json",
+                    "type": "string",
+                    "parser": "Identity",
+                    "params": {
+                        "registry": "minecraft:potion"
+                    },
                     "title": "Potion type",
                     "description": "If the item is a potion, check its type"
                 },
@@ -402,7 +462,11 @@
                         "additionalProperties": false,
                         "properties": {
                             "enchantment": {
-                                "$ref": "./enchantment_name.json",
+                                "type": "string",
+                                "parser": "Identity",
+                                "params": {
+                                    "registry": "minecraft:enchantment"
+                                },
                                 "title": "The enchantment name"
                             },
                             "levels": {
@@ -424,7 +488,11 @@
             "properties": {
                 "biome": {
                     "title": "The biome the location is in",
-                    "$ref": "./biome_name.json"
+                    "type": "string",
+                    "parser": "Identity",
+                    "params": {
+                        "registry": "minecraft:biome"
+                    }
                 },
                 "block": {
                     "type": "object",
@@ -432,11 +500,19 @@
                     "title": "Predicate for block",
                     "properties": {
                         "block": {
-                            "$ref": "./block_name.json",
+                            "type": "string",
+                            "parser": "Identity",
+                            "params": {
+                                "registry": "minecraft:block"
+                            },
                             "title": "Block ID"
                         },
                         "tag": {
-                            "$ref": "./namespaced_id.json",
+                            "type": "string",
+                            "parser": "Identity",
+                            "params": {
+                                "registry": "$tags/blocks"
+                            },
                             "title": "Block tag ID"
                         },
                         "nbt": {
@@ -455,11 +531,19 @@
                     "title": "Predicate for fluid",
                     "properties": {
                         "fluid": {
-                            "$ref": "./fluid_name.json",
+                            "type": "string",
+                            "parser": "Identity",
+                            "params": {
+                                "registry": "minecraft:fluid"
+                            },
                             "title": "Fluid ID"
                         },
                         "tag": {
-                            "$ref": "./namespaced_id.json",
+                            "type": "string",
+                            "parser": "Identity",
+                            "params": {
+                                "registry": "$tags/fluids"
+                            },
                             "title": "Fluid tag ID"
                         },
                         "state": {
@@ -480,7 +564,11 @@
                     }
                 },
                 "dimension": {
-                    "$ref": "./dimension_name.json",
+                    "type": "string",
+                    "parser": "Identity",
+                    "params": {
+                        "registry": "minecraft:dimension_type"
+                    },
                     "title": "The dimension the location is in"
                 },
                 "feature": {
