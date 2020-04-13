@@ -1,3 +1,8 @@
+# [v2.0.8](https://github.com/SPGoding/datapack-json/compare/v2.0.7...v2.0.8) (2020-04-13)
+
+## 🐛 Bug Fixes
+- [`2992a15`](https://github.com/SPGoding/datapack-json/commit/2992a15)  Fix text component schema
+
 # [v2.0.7](https://github.com/SPGoding/datapack-json/compare/v2.0.6...v2.0.7) (2020-04-13)
 
 ## 🐛 Bug Fixes
