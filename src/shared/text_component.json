@@ -1,21 +1,24 @@
 {
-    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$schema": "https://json-schema.org/draft-07/schema",
     "$id": "https://raw.githubusercontent.com/SPGoding/datapack-json/master/src/shared/text_component.json",
-    "$ref": "#/$defs/text_component",
-    "$defs": {
+    "$ref": "#/definitions/text_component",
+    "definitions": {
         "text_component": {
             "anyOf": [
                 {
-                    "type": "string",
+                    "type": [
+                        "boolean",
+                        "string"
+                    ],
                     "title": "Equivalent to {\"text\":\"Value\"}"
                 },
                 {
-                    "$ref": "#/$defs/text_object"
+                    "$ref": "#/definitions/text_object"
                 },
                 {
                     "type": "array",
                     "items": {
-                        "$ref": "#/$defs/text_component"
+                        "$ref": "#/definitions/text_component"
                     },
                     "title": "Equivalent to firstItem, with \"extra\":[nextItems]"
                 }
@@ -31,7 +34,9 @@
                             "title": "The direct text to apply"
                         }
                     },
-                    "required": ["text"],
+                    "required": [
+                        "text"
+                    ],
                     "not": {
                         "required": [
                             "translate",
@@ -55,13 +60,22 @@
                             "title": "Replacements",
                             "description": "Extra items to apply in place of %s and %{x}$s in the translation string. These items inherit from the base component in styling, such as text colour and italics",
                             "items": {
-                                "$ref": "#/$defs/text_component"
+                                "$ref": "#/definitions/text_component"
                             }
                         }
                     },
-                    "required": ["translate"],
+                    "required": [
+                        "translate"
+                    ],
                     "not": {
-                        "required": ["text", "score", "selector", "keybind", "nbt", "interpret"]
+                        "required": [
+                            "text",
+                            "score",
+                            "selector",
+                            "keybind",
+                            "nbt",
+                            "interpret"
+                        ]
                     }
                 },
                 {
@@ -80,14 +94,20 @@
                                     "title": "Objective to show score from"
                                 },
                                 "value": {
-                                    "type": ["number", "string", "boolean"],
+                                    "type": [
+                                        "number",
+                                        "string",
+                                        "boolean"
+                                    ],
                                     "title": "A default when score not found",
                                     "description": "Will be converted to a string if needed"
                                 }
                             }
                         }
                     },
-                    "required": ["score"],
+                    "required": [
+                        "score"
+                    ],
                     "not": {
                         "required": [
                             "text",
@@ -108,7 +128,9 @@
                             "description": "If there are multiple, they will be comma seperated until the last value with an 'and'"
                         }
                     },
-                    "required": ["selector"],
+                    "required": [
+                        "selector"
+                    ],
                     "not": {
                         "required": [
                             "text",
@@ -163,7 +185,9 @@
                             ]
                         }
                     },
-                    "required": ["keybind"],
+                    "required": [
+                        "keybind"
+                    ],
                     "not": {
                         "required": [
                             "text",
@@ -175,7 +199,7 @@
                             "interpret"
                         ]
                     }
-                },                
+                },
                 {
                     "properties": {
                         "nbt": {
@@ -187,7 +211,9 @@
                             "title": "Whether contents of selected tags should be interpreted as chat components"
                         }
                     },
-                    "required": ["nbt"],
+                    "required": [
+                        "nbt"
+                    ],
                     "anyOf": [
                         {
                             "properties": {
@@ -269,7 +295,7 @@
                 "interpret": {},
                 "extra": {
                     "type": "array",
-                    "$ref": "#/$defs/text_component",
+                    "$ref": "#/definitions/text_component",
                     "title": "Additional items to add",
                     "description": "These items inherit from the base component in styling, such as text colour and italics"
                 },
@@ -370,12 +396,14 @@
                             "properties": {
                                 "action": {
                                     "type": "string",
-                                    "enum": ["show_text"]
+                                    "enum": [
+                                        "show_text"
+                                    ]
                                 },
                                 "value": {
                                     "anyOf": [
                                         {
-                                            "$ref": "#/$defs/text_component"
+                                            "$ref": "#/definitions/text_component"
                                         }
                                     ]
                                 }
@@ -385,7 +413,10 @@
                             "type": "object",
                             "properties": {
                                 "action": {
-                                    "enum": ["show_item", "show_entity"]
+                                    "enum": [
+                                        "show_item",
+                                        "show_entity"
+                                    ]
                                 },
                                 "value": {
                                     "type": "string"
