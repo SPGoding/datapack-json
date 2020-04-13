@@ -59,6 +59,12 @@
                 "playground/tags/items/*.json"
             ],
             "url": "./src/tags/item.json"
+        },
+        {
+            "fileMatch": [
+                "playground/text_components/*.json"
+            ],
+            "url": "./src/shared/text_component.json"
         }
     ],
     "files.associations": {

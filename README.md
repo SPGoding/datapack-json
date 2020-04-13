@@ -17,6 +17,24 @@ There are two custom properties for `string` schema: `parser` and `params`, whic
 
 # List of Parsers
 
+## `Command` Parser
+
+A parser used to validate commands.
+
+### Parameters
+
+- `leadingSlash`: (boolean | `null`) Whether the command should start with slash (`/`). The string won't be validated if the value doesn't start with slash and the parameter is set to `true`.
+
+## `Entity` Parser
+
+A parser used to validate entities.
+
+### Parameters
+
+- `amount`: (`single` | `multiple`) The acceptable amount of entities.
+- `type`: (`entities` | `players`) The type of the entities.
+- `isScoreHolder`: (boolean) Optional, defaults to `false`. Whether this entity is a score holder.
+
 ## `Identity` Parser
 
 A parser used to validate namespaced IDs.
@@ -29,6 +47,7 @@ A parser used to validate namespaced IDs.
     - `$lootTables`: All available loot tables.
     - `$predicates`: All available predicates.
     - `$recipes`: All available recipes.
+    - `$storages`: All available recipes.
     - `$tags/blocks`: All available block tags.
     - `$tags/entityTypes`: All available entity type tags.
     - `$tags/fluids`: All available fluid tags.
@@ -40,6 +59,39 @@ A parser used to validate namespaced IDs.
 - `values`: (object) Optional. All possible IDs that can be put in this string.
 - `allowTag`: (boolean) Optional, defaults to `false`. If set to `true`, an ID starting with `#` under the corresponding registry should be accepted.
 - `allowUnknownValue`: (boolean) Optional, defaults to `false`. If set to `true`, IDs that don't exist in neither `registry` nor `values` won't be reported as errors.
+
+## `NbtPath` Parser
+
+A parser used to validate NBT paths.
+
+## `Nbt` Parser
+
+A parser used to validate NBT tags.
+
+### Parameters
+
+- `type`: (`NbtNodeTypeName` | `NbtNodeTypeName[]`) The type of this NBT tag.
+- `category`: (`minecraft:block` | `minecraft:entity` | `minecraft:item`) The type of this NBT.
+- `id`: (string) Optional. An ID in the specific category.
+- `isPredicate`: (boolean) Optional, defaults to `false`. Whether this NBT is in a predicate or not.
+
+## `Objective` Parser
+
+A parser used to validate scoreboard objectives.
+
+## `TranslateKey` Parser
+
+A parser used to validate translation keys in resource packs.
+
+## `Vector` Parser
+
+A parser used to validate number vectors.
+
+### Parameters
+
+- `dimension`: (number) The dimension of the vector.
+- `allowLocal`: (boolean) Optional, defaults to `true`. Whether local coordinates are acceptable.
+- `allowRelative`: (boolean) Optional, defaults to `true`. Whether relative coordinates are acceptable.
 
 # File Struture
 

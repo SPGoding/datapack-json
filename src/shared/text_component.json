@@ -4,11 +4,12 @@
     "$ref": "#/definitions/text_component",
     "definitions": {
         "text_component": {
-            "anyOf": [
+            "oneOf": [
                 {
                     "type": [
                         "boolean",
-                        "string"
+                        "string",
+                        "number"
                     ],
                     "title": "Equivalent to {\"text\":\"Value\"}"
                 },
@@ -20,7 +21,7 @@
                     "items": {
                         "$ref": "#/definitions/text_component"
                     },
-                    "title": "Equivalent to firstItem, with \"extra\":[nextItems]"
+                    "title": "Equivalent to firstItem with \"extra\": [nextItems]"
                 }
             ]
         },
@@ -53,6 +54,7 @@
                     "properties": {
                         "translate": {
                             "type": "string",
+                            "parser": "TranslateKey",
                             "title": "The translation string to translate"
                         },
                         "with": {
@@ -87,10 +89,17 @@
                             "properties": {
                                 "name": {
                                     "type": "string",
+                                    "parser": "Entity",
+                                    "params": {
+                                        "amount": "single",
+                                        "type": "entities",
+                                        "isScoreHolder": true
+                                    },
                                     "title": "Entity selector whose score to show"
                                 },
                                 "objective": {
                                     "type": "string",
+                                    "parser": "Objective",
                                     "title": "Objective to show score from"
                                 },
                                 "value": {
@@ -102,7 +111,11 @@
                                     "title": "A default when score not found",
                                     "description": "Will be converted to a string if needed"
                                 }
-                            }
+                            },
+                            "required": [
+                                "name",
+                                "objective"
+                            ]
                         }
                     },
                     "required": [
@@ -124,6 +137,11 @@
                     "properties": {
                         "selector": {
                             "type": "string",
+                            "parser": "Entity",
+                            "params": {
+                                "amount": "multiple",
+                                "type": "entities"
+                            },
                             "title": "An entity to mention",
                             "description": "If there are multiple, they will be comma seperated until the last value with an 'and'"
                         }
@@ -204,6 +222,7 @@
                     "properties": {
                         "nbt": {
                             "type": "string",
+                            "parser": "NbtPath",
                             "title": "The NBT Path"
                         },
                         "interpret": {
@@ -214,12 +233,15 @@
                     "required": [
                         "nbt"
                     ],
-                    "anyOf": [
+                    "oneOf": [
                         {
                             "properties": {
                                 "block": {
                                     "type": "string",
-                                    "pattern": "([+-]?\\d+[\\.]?\\d+)\\s([+-]?\\d+[\\.]?\\d+)\\s([+-]?\\d+[\\.]?\\d+)",
+                                    "parser": "Vector",
+                                    "params": {
+                                        "dimension": 3
+                                    },
                                     "title": "The coordinates of the block which uses the same format as /setblock"
                                 }
                             },
@@ -237,6 +259,11 @@
                             "properties": {
                                 "entity": {
                                     "type": "string",
+                                    "parser": "Entity",
+                                    "params": {
+                                        "amount": "single",
+                                        "type": "entities"
+                                    },
                                     "title": "The target selector"
                                 }
                             },
@@ -254,8 +281,11 @@
                             "properties": {
                                 "storage": {
                                     "type": "string",
-                                    "title": "The namespaced ID of the storage",
-                                    "pattern": "^([a-z0-9\\.\\-_]+:)?([a-z0-9\\.\\-_]+/)*[a-z0-9\\.\\-_]*$"
+                                    "parser": "Identity",
+                                    "params": {
+                                        "registry": "$storages"
+                                    },
+                                    "title": "The namespaced ID of the storage"
                                 }
                             },
                             "required": [
@@ -353,76 +383,141 @@
                     "description": "Action to perform when this text is left clicked on",
                     "additionalProperties": false,
                     "properties": {
-                        "action": {
-                            "oneOf": [
-                                {
+                        "action": {},
+                        "value": {}
+                    },
+                    "oneOf": [
+                        {
+                            "properties": {
+                                "action": {
                                     "enum": [
                                         "open_url"
                                     ],
                                     "description": "Opens the web address in value"
                                 },
-                                {
+                                "value": {
+                                    "type": "string",
+                                    "title": "The URL of the web page"
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "action": {
                                     "enum": [
                                         "run_command"
                                     ],
-                                    "description": "Runs the command in value (use /trigger)"
+                                    "description": "Runs the command in value"
                                 },
-                                {
+                                "value": {
+                                    "type": "string",
+                                    "parser": "Command",
+                                    "params": {
+                                        "leadingSlash": true
+                                    },
+                                    "title": "The command to run"
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "action": {
                                     "enum": [
                                         "change_page"
                                     ],
                                     "description": "Changes the book page"
                                 },
-                                {
+                                "value": {
+                                    "type": "string",
+                                    "title": "The page number"
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "action": {
                                     "enum": [
                                         "suggest_command"
                                     ],
                                     "description": "Replaces the player's chat window with value"
+                                },
+                                "value": {
+                                    "type": "string",
+                                    "parser": "Command",
+                                    "params": {
+                                        "leadingSlash": true
+                                    },
+                                    "title": "The command to suggest"
                                 }
-                            ]
+                            }
                         }
-                    },
-                    "value": {
-                        "type": "string",
-                        "title": "Value to run action with"
-                    }
+                    ],
+                    "required": [
+                        "action",
+                        "value"
+                    ]
                 },
                 "hoverEvent": {
+                    "type": "object",
                     "additionalProperties": false,
                     "description": "What to show upon a hover",
-                    "anyOf": [
+                    "properties": {
+                        "action": {},
+                        "value": {}
+                    },
+                    "oneOf": [
                         {
-                            "type": "object",
                             "properties": {
                                 "action": {
-                                    "type": "string",
                                     "enum": [
                                         "show_text"
                                     ]
                                 },
                                 "value": {
-                                    "anyOf": [
-                                        {
-                                            "$ref": "#/definitions/text_component"
-                                        }
-                                    ]
+                                    "$ref": "#/definitions/text_component"
                                 }
                             }
                         },
                         {
-                            "type": "object",
                             "properties": {
                                 "action": {
                                     "enum": [
-                                        "show_item",
                                         "show_entity"
                                     ]
                                 },
                                 "value": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "parser": "Nbt",
+                                    "params": {
+                                        "type": "Compound",
+                                        "category": "minecraft:entity",
+                                        "id": "spgoding:i-am-guaranteed-not-to-exist"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "action": {
+                                    "enum": [
+                                        "show_item"
+                                    ]
+                                },
+                                "value": {
+                                    "type": "string",
+                                    "parser": "Nbt",
+                                    "params": {
+                                        "type": "Compound",
+                                        "category": "minecraft:item",
+                                        "id": "spgoding:i-am-guaranteed-not-to-exist"
+                                    }
                                 }
                             }
                         }
+                    ],
+                    "required": [
+                        "action",
+                        "value"
                     ]
                 }
             }
