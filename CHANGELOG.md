@@ -1,3 +1,8 @@
+# [v2.0.7](https://github.com/SPGoding/datapack-json/compare/v2.0.6...v2.0.7) (2020-04-13)
+
+## 🐛 Bug Fixes
+- [`9dceee5`](https://github.com/SPGoding/datapack-json/commit/9dceee5)  Fix not fully supporting 2019-06 error
+
 # [v2.0.6](https://github.com/SPGoding/datapack-json/compare/v2.0.5...v2.0.6) (2020-04-08)
 
 ## 🐛 Bug Fixes
