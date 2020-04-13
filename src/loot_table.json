@@ -1,5 +1,5 @@
 {
-    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$schema": "https://json-schema.org/draft-07/schema",
     "$id": "https://raw.githubusercontent.com/SPGoding/datapack-json/master/src/loot_table.json",
     "type": "object",
     "title": "Root tag",
@@ -23,7 +23,7 @@
             "type": "array",
             "title": "Loot table functions",
             "items": {
-                "$ref": "#/$defs/function"
+                "$ref": "#/definitions/function"
             }
         },
         "pools": {
@@ -37,21 +37,21 @@
                         "type": "array",
                         "title": "Pool functions",
                         "items": {
-                            "$ref": "#/$defs/function"
+                            "$ref": "#/definitions/function"
                         }
                     },
                     "conditions": {
-                        "$ref": "#/$defs/conditions",
+                        "$ref": "#/definitions/conditions",
                         "title": "Pool conditions",
                         "description": "The conditions which must pass in order for this pool to be used"
                     },
                     "rolls": {
-                        "$ref": "#/$defs/random",
+                        "$ref": "#/definitions/random",
                         "title": "Rolls",
                         "description": "The number of rolls in this pool. If it is a range, a random number is chosen"
                     },
                     "bonus_rolls": {
-                        "$ref": "#/$defs/random",
+                        "$ref": "#/definitions/random",
                         "title": "Bonus rolls",
                         "description": "The additional rolls given for each point of luck"
                     },
@@ -60,7 +60,7 @@
                         "title": "The entries",
                         "description": "For each roll, one of these entries is chosen to be given, with a chance based on the 'weight'",
                         "items": {
-                            "$ref": "#/$defs/entry"
+                            "$ref": "#/definitions/entry"
                         }
                     }
                 },
@@ -71,7 +71,7 @@
             }
         }
     },
-    "$defs": {
+    "definitions": {
         "conditions": {
             "type": "array",
             "title": "Conditions",
@@ -136,7 +136,7 @@
                             "description": "Set the 'count' of the items. Can be either an integer or a range. If it is a range it is set randomly within that range"
                         },
                         "count": {
-                            "$ref": "#/$defs/random",
+                            "$ref": "#/definitions/random",
                             "description": "The exact value or a range to choose a random value from to set the count to"
                         },
                         "conditions": {}
@@ -153,7 +153,7 @@
                             "description": "Sets the percentage of the maximum durability"
                         },
                         "damage": {
-                            "$ref": "#/$defs/random",
+                            "$ref": "#/definitions/random",
                             "description": "The data value or a random value in a range to set the 'durability' to. 0.35 means 35% durability left"
                         },
                         "conditions": {}
@@ -225,7 +225,7 @@
                                         "type": "string"
                                     },
                                     "amount": {
-                                        "$ref": "#/$defs/random",
+                                        "$ref": "#/definitions/random",
                                         "title": "Modification amount",
                                         "description": "The amount to change the attribute by. This can either be a single number or a range, with a `min` and `max` key"
                                     },
@@ -314,7 +314,7 @@
                             "description": "Enchants the item randomly as if it were enchanted. The levels key is a range object (either an integer or an object). If \"treasure\" is true, then the enchantment may use treasure enchantments (mending or frost-walker)"
                         },
                         "levels": {
-                            "$ref": "#/$defs/random"
+                            "$ref": "#/definitions/random"
                         },
                         "treasure": {
                             "type": "boolean",
@@ -338,7 +338,7 @@
                             "description": "How many extra items to add for each level of the looting enchantment applied. For example, a count of 10 with a looting level of 5 would give an extra 50 items"
                         },
                         "count": {
-                            "$ref": "#/$defs/random",
+                            "$ref": "#/definitions/random",
                             "description": "The exact value or a range to choose a random value from to add to the count for each level of looting"
                         },
                         "limit": {
@@ -452,7 +452,7 @@
                             "description": "A name will be added"
                         },
                         "entity": {
-                            "$ref": "#/$defs/entity",
+                            "$ref": "#/definitions/entity",
                             "description": "Will be used to parse selectors and scores defined in name"
                         },
                         "conditions": {}
@@ -476,7 +476,7 @@
                             }
                         },
                         "entity": {
-                            "$ref": "#/$defs/entity",
+                            "$ref": "#/definitions/entity",
                             "description": "Will be used to parse selectors and scores defined in each lore"
                         },
                         "replace": {
@@ -497,7 +497,7 @@
                             "description": "Set SkullOwner of a player head according to the specific player"
                         },
                         "entity": {
-                            "$ref": "#/$defs/entity",
+                            "$ref": "#/definitions/entity",
                             "description": "If it's not a player, nothing will happen"
                         },
                         "conditions": {}
@@ -613,7 +613,7 @@
                         "source": {
                             "oneOf": [
                                 {
-                                    "$ref": "#/$defs/entity"
+                                    "$ref": "#/definitions/entity"
                                 },
                                 {
                                     "enum": [
@@ -696,7 +696,7 @@
                             "type": "array",
                             "description": "list of entries (same as in pool)",
                             "items": {
-                                "$ref": "#/$defs/entry"
+                                "$ref": "#/definitions/entry"
                             }
                         },
                         "conditions": {}
@@ -731,7 +731,7 @@
             ],
             "properties": {
                 "conditions": {
-                    "$ref": "#/$defs/conditions"
+                    "$ref": "#/definitions/conditions"
                 }
             }
         },
@@ -805,7 +805,7 @@
                         "children": {
                             "type": "array",
                             "items": {
-                                "$ref": "#/$defs/entry"
+                                "$ref": "#/definitions/entry"
                             }
                         }
                     }
@@ -841,7 +841,7 @@
                         "children": {
                             "type": "array",
                             "items": {
-                                "$ref": "#/$defs/entry"
+                                "$ref": "#/definitions/entry"
                             }
                         }
                     }
@@ -859,7 +859,7 @@
                         "children": {
                             "type": "array",
                             "items": {
-                                "$ref": "#/$defs/entry"
+                                "$ref": "#/definitions/entry"
                             }
                         }
                     }
@@ -910,11 +910,11 @@
                     "type": "array",
                     "title": "Entry functions",
                     "items": {
-                        "$ref": "#/$defs/function"
+                        "$ref": "#/definitions/function"
                     }
                 },
                 "conditions": {
-                    "$ref": "#/$defs/conditions",
+                    "$ref": "#/definitions/conditions",
                     "title": "Entry conditions",
                     "description": "The conditions which must pass in order for this entry to be used"
                 }

@@ -1,6 +1,6 @@
 {
     "type": "object",
-    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$schema": "https://json-schema.org/draft-07/schema",
     "$id": "https://raw.githubusercontent.com/SPGoding/datapack-json/master/src/predicate.json",
     "title": "Root tag",
     "oneOf": [
@@ -13,7 +13,7 @@
                     ]
                 },
                 "entity": {
-                    "$ref": "#/$defs/entity"
+                    "$ref": "#/definitions/entity"
                 },
                 "scores": {
                     "type": "object",
@@ -36,10 +36,10 @@
                     "descriptions": "Test whether an entity describes in 'entity' can pass the predicate described in 'predicate'"
                 },
                 "entity": {
-                    "$ref": "#/$defs/entity"
+                    "$ref": "#/definitions/entity"
                 },
                 "predicate": {
-                    "$ref": "./shared/predicate.json#/$defs/entity"
+                    "$ref": "./shared/predicate.json#/definitions/entity"
                 }
             }
         },
@@ -160,7 +160,7 @@
                     "description": "Checks damage source"
                 },
                 "predicate": {
-                    "$ref": "./shared/predicate.json#/$defs/damage"
+                    "$ref": "./shared/predicate.json#/definitions/damage"
                 }
             }
         },
@@ -174,7 +174,7 @@
                     "description": "Checks location"
                 },
                 "predicate": {
-                    "$ref": "./shared/predicate.json#/$defs/location"
+                    "$ref": "./shared/predicate.json#/definitions/location"
                 },
                 "offsetX": {
                     "type": "number",
@@ -200,7 +200,7 @@
                     "description": "Checks tool (available for block breaking and fishing)"
                 },
                 "predicate": {
-                    "$ref": "./shared/predicate.json#/$defs/item"
+                    "$ref": "./shared/predicate.json#/definitions/item"
                 }
             }
         },
@@ -320,7 +320,7 @@
     "required": [
         "condition"
     ],
-    "$defs": {
+    "definitions": {
         "entity": {
             "title": "Entity to test",
             "enum": [

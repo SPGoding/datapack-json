@@ -1,6 +1,6 @@
 {
     "$attribution": "Some text descriptions in this file are from https://github.com/skylinerw/guides/blob/master/java/recipes.md. License: https://github.com/skylinerw/guides/blob/master/LICENSE.md",
-    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$schema": "https://json-schema.org/draft-07/schema",
     "$id": "https://raw.githubusercontent.com/SPGoding/datapack-json/master/src/recipe.json",
     "type": "object",
     "title": "Root tag",
@@ -75,13 +75,13 @@
                 "additionalProperties": {
                     "oneOf": [
                         {
-                            "$ref": "#/$defs/input",
+                            "$ref": "#/definitions/input",
                             "description": "The single character representing this item"
                         },
                         {
                             "type": "array",
                             "items": {
-                                "$ref": "#/$defs/input"
+                                "$ref": "#/definitions/input"
                             },
                             "description": "The single character representing these possible items"
                         }
@@ -93,7 +93,7 @@
                 }
             },
             "result": {
-                "$ref": "#/$defs/craft_result"
+                "$ref": "#/definitions/craft_result"
             }
         },
         "required": [
@@ -130,13 +130,13 @@
                     "items": {
                         "oneOf": [
                             {
-                                "$ref": "#/$defs/input",
+                                "$ref": "#/definitions/input",
                                 "description": "An ingredient"
                             },
                             {
                                 "type": "array",
                                 "items": {
-                                    "$ref": "#/$defs/input"
+                                    "$ref": "#/definitions/input"
                                 },
                                 "description": "List of possible ingredients"
                             }
@@ -144,7 +144,7 @@
                     }
                 },
                 "result": {
-                    "$ref": "#/$defs/craft_result"
+                    "$ref": "#/definitions/craft_result"
                 }
             },
             "required": [
@@ -178,14 +178,14 @@
                     "ingredient": {
                         "oneOf": [
                             {
-                                "$ref": "#/$defs/input",
+                                "$ref": "#/definitions/input",
                                 "title": "An ingredient"
                             },
                             {
                                 "type": "array",
                                 "title": "List of possible ingredients",
                                 "items": {
-                                    "$ref": "#/$defs/input"
+                                    "$ref": "#/definitions/input"
                                 }
                             }
                         ]
@@ -236,14 +236,14 @@
                         "ingredient": {
                             "oneOf": [
                                 {
-                                    "$ref": "#/$defs/input",
+                                    "$ref": "#/definitions/input",
                                     "title": "An ingredient"
                                 },
                                 {
                                     "type": "array",
                                     "title": "List of possible ingredients",
                                     "items": {
-                                        "$ref": "#/$defs/input"
+                                        "$ref": "#/definitions/input"
                                     }
                                 }
                             ]
@@ -292,7 +292,7 @@
             }
         }
     },
-    "$defs": {
+    "definitions": {
         "input": {
             "type": "object",
             "oneOf": [
