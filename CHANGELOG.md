@@ -1,3 +1,8 @@
+# [v2.0.9](https://github.com/SPGoding/datapack-json/compare/v2.0.8...v2.0.9) (2020-04-25)
+
+## 🐛 Bug Fixes
+- [`98d72d3`](https://github.com/SPGoding/datapack-json/commit/98d72d3)  Fix not supporting 1.16 hoverEvent
+
 # [v2.0.8](https://github.com/SPGoding/datapack-json/compare/v2.0.7...v2.0.8) (2020-04-13)
 
 ## 🐛 Bug Fixes
