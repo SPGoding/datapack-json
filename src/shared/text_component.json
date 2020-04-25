@@ -463,6 +463,7 @@
                     "description": "What to show upon a hover",
                     "properties": {
                         "action": {},
+                        "contents": {},
                         "value": {}
                     },
                     "oneOf": [
@@ -472,6 +473,9 @@
                                     "enum": [
                                         "show_text"
                                     ]
+                                },
+                                "contents": {
+                                    "$ref": "#/definitions/text_component"
                                 },
                                 "value": {
                                     "$ref": "#/definitions/text_component"
@@ -484,6 +488,25 @@
                                     "enum": [
                                         "show_entity"
                                     ]
+                                },
+                                "contents": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "string",
+                                            "parser": "Uuid"
+                                        },
+                                        "name": {
+                                            "$ref": "#/definitions/text_component"
+                                        },
+                                        "type": {
+                                            "type": "string",
+                                            "parser": "Identity",
+                                            "params": {
+                                                "registry": "minecraft:entity_type"
+                                            }
+                                        }
+                                    }
                                 },
                                 "value": {
                                     "type": "string",
@@ -503,6 +526,36 @@
                                         "show_item"
                                     ]
                                 },
+                                "contents": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "string",
+                                            "parser": "Identity",
+                                            "params": {
+                                                "registry": "minecraft:item"
+                                            }
+                                        },
+                                        "count": {
+                                            "type": "number",
+                                            "minimum": 1,
+                                            "maximum": 64
+                                        },
+                                        "tag": {
+                                            "type": "string",
+                                            "parser": "Nbt",
+                                            "params": {
+                                                "type": "Compound",
+                                                "category": "minecraft:item",
+                                                "id": [
+                                                    {
+                                                        "Child": "id"
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    }
+                                },
                                 "value": {
                                     "type": "string",
                                     "parser": "Nbt",
@@ -516,8 +569,7 @@
                         }
                     ],
                     "required": [
-                        "action",
-                        "value"
+                        "action"
                     ]
                 }
             }

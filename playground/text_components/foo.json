@@ -12,5 +12,16 @@
                 "color": "aqua"
             }
         }
+    },
+    {
+        "text": "1",
+        "hoverEvent": {
+            "action": "show_item",
+            "contents": {
+                "count": 1,
+                "id": "minecraft:stone",
+                "tag": "{foo: 1b}"
+            }
+        }
     }
 ]
