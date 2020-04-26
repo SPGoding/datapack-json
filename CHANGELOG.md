@@ -1,3 +1,8 @@
+# [v2.0.10](https://github.com/SPGoding/datapack-json/compare/v2.0.9...v2.0.10) (2020-04-26)
+
+## 🐛 Bug Fixes
+- [`3590f5e`](https://github.com/SPGoding/datapack-json/commit/3590f5e)  Supporting new color format in text componnets (Issues: [`#39`](https://github.com/SPGoding/datapack-json/issues/39))
+
 # [v2.0.9](https://github.com/SPGoding/datapack-json/compare/v2.0.8...v2.0.9) (2020-04-25)
 
 ## 🐛 Bug Fixes
