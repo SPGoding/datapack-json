@@ -93,7 +93,15 @@
             "properties": {
                 "entity": {
                     "$ref": "#/definitions/entity",
-                    "title": "The entity which died"
+                    "title": "The entity which died",
+                    "oneOf": [
+                        {
+                            "$ref": "#/definitions/entity"
+                        },
+                        {
+                            "$ref": "../advancement.json#/definitions/entity_conditions"
+                        }
+                    ]
                 },
                 "killing_blow": {
                     "$ref": "#/definitions/damage_flags",
@@ -484,7 +492,6 @@
         },
         "location": {
             "type": "object",
-            "additionalProperties": false,
             "properties": {
                 "biome": {
                     "title": "The biome the location is in",

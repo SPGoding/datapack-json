@@ -157,6 +157,11 @@
             "properties": {
                 "trigger": {
                     "type": "string"
+                },
+                "conditions": {
+                    "player": {
+                        "$ref": "#/definitions/entity_conditions"
+                    }
                 }
             },
             "required": [
@@ -164,6 +169,39 @@
             ],
             "type": "object",
             "oneOf": [
+                {
+                    "additionalProperties": false,
+                    "properties": {
+                        "trigger": {
+                            "type": "string",
+                            "enum": [
+                                "minecraft:bee_nest_destroyed"
+                            ],
+                            "title": "Destroyed bee nest",
+                            "description": "This criteria will be checked whenever the player changes dimension (such as by going through a portal)"
+                        },
+                        "conditions": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "title": "Required conditions",
+                            "description": "All of these conditions must pass for the criteria to be activated",
+                            "properties": {
+                                "player": {
+                                    "$ref": "#/definitions/entity_conditions"
+                                },
+                                "block": {
+                                    "type": "string"
+                                },
+                                "item": {
+                                    "$ref": "./shared/predicate.json#/definitions/item"
+                                },
+                                "num_bees_inside": {
+                                    "type": "number"
+                                }
+                            }
+                        }
+                    }
+                },
                 {
                     "additionalProperties": false,
                     "properties": {
@@ -181,18 +219,42 @@
                             "title": "Required conditions",
                             "description": "All of these conditions must pass for the criteria to be activated",
                             "properties": {
+                                "player": {
+                                    "$ref": "#/definitions/entity_conditions"
+                                },
                                 "parent": {
-                                    "$ref": "./shared/predicate.json#/definitions/entity",
                                     "title": "Conditions to test against either of the parents",
-                                    "description": "Using both parent and partner is only useful when using horses/donkeys"
+                                    "description": "Using both parent and partner is only useful when using horses/donkeys",
+                                    "oneOf": [
+                                        {
+                                            "$ref": "./shared/predicate.json#/definitions/entity"
+                                        },
+                                        {
+                                            "$ref": "#/definitions/entity_conditions"
+                                        }
+                                    ]
                                 },
                                 "partner": {
-                                    "$ref": "./shared/predicate.json#/definitions/entity",
-                                    "title": "Conditions to test against either of the parents"
+                                    "title": "Conditions to test against either of the parents",
+                                    "oneOf": [
+                                        {
+                                            "$ref": "./shared/predicate.json#/definitions/entity"
+                                        },
+                                        {
+                                            "$ref": "#/definitions/entity_conditions"
+                                        }
+                                    ]
                                 },
                                 "child": {
-                                    "$ref": "./shared/predicate.json#/definitions/entity",
-                                    "title": "Conditions to test against the child entity"
+                                    "title": "Conditions to test against the child entity",
+                                    "oneOf": [
+                                        {
+                                            "$ref": "./shared/predicate.json#/definitions/entity"
+                                        },
+                                        {
+                                            "$ref": "#/definitions/entity_conditions"
+                                        }
+                                    ]
                                 }
                             }
                         }
@@ -215,6 +277,9 @@
                             "description": "All of these conditions must pass for the criteria to be activated",
                             "type": "object",
                             "properties": {
+                                "player": {
+                                    "$ref": "#/definitions/entity_conditions"
+                                },
                                 "potion": {
                                     "type": "string",
                                     "parser": "Identity",
@@ -244,6 +309,9 @@
                             "title": "Required conditions",
                             "description": "All of these conditions must pass for the criteria to be activated",
                             "properties": {
+                                "player": {
+                                    "$ref": "#/definitions/entity_conditions"
+                                },
                                 "to": {
                                     "type": "string",
                                     "parser": "Identity",
@@ -270,6 +338,41 @@
                         "trigger": {
                             "type": "string",
                             "enum": [
+                                "minecraft:channeled_lightning"
+                            ]
+                        },
+                        "conditions": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "title": "Required conditions",
+                            "description": "All of these conditions must pass for the criteria to be activated",
+                            "properties": {
+                                "player": {
+                                    "$ref": "#/definitions/entity_conditions"
+                                },
+                                "victims": {
+                                    "type": "array",
+                                    "items": {
+                                        "oneOf": [
+                                            {
+                                                "$ref": "./shared/predicate.json#/definitions/entity"
+                                            },
+                                            {
+                                                "$ref": "#/definitions/entity_conditions"
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "additionalProperties": false,
+                    "properties": {
+                        "trigger": {
+                            "type": "string",
+                            "enum": [
                                 "minecraft:construct_beacon"
                             ],
                             "title": "Build a beacon",
@@ -281,6 +384,9 @@
                             "title": "Required conditions",
                             "description": "All of these conditions must pass for the criteria to be activated",
                             "properties": {
+                                "player": {
+                                    "$ref": "#/definitions/entity_conditions"
+                                },
                                 "level": {
                                     "$ref": "./shared/range.json",
                                     "title": "The beacon level"
@@ -307,6 +413,9 @@
                             "description": "All of these conditions must pass for the criteria to be activated",
                             "type": "object",
                             "properties": {
+                                "player": {
+                                    "$ref": "#/definitions/entity_conditions"
+                                },
                                 "item": {
                                     "$ref": "./shared/predicate.json#/definitions/item",
                                     "title": "Item",
@@ -333,13 +442,30 @@
                             "description": "All of these conditions must pass for the criteria to be activated",
                             "type": "object",
                             "properties": {
+                                "player": {
+                                    "$ref": "#/definitions/entity_conditions"
+                                },
                                 "zombie": {
-                                    "$ref": "./shared/predicate.json#/definitions/entity",
-                                    "title": "Information about the zombie villager"
+                                    "title": "Information about the zombie villager",
+                                    "oneOf": [
+                                        {
+                                            "$ref": "./shared/predicate.json#/definitions/entity"
+                                        },
+                                        {
+                                            "$ref": "#/definitions/entity_conditions"
+                                        }
+                                    ]
                                 },
                                 "villager": {
-                                    "$ref": "./shared/predicate.json#/definitions/entity",
-                                    "title": "Information about villager cured into"
+                                    "title": "Information about villager cured into",
+                                    "oneOf": [
+                                        {
+                                            "$ref": "./shared/predicate.json#/definitions/entity"
+                                        },
+                                        {
+                                            "$ref": "#/definitions/entity_conditions"
+                                        }
+                                    ]
                                 }
                             }
                         }
@@ -362,6 +488,9 @@
                             "description": "All of these conditions must pass for the criteria to be activated",
                             "type": "object",
                             "properties": {
+                                "player": {
+                                    "$ref": "#/definitions/entity_conditions"
+                                },
                                 "effects": {
                                     "$ref": "./shared/predicate.json#/definitions/effect",
                                     "title": "The potion effects of the player"
@@ -387,6 +516,9 @@
                             "description": "All of these conditions must pass for the criteria to be activated",
                             "type": "object",
                             "properties": {
+                                "player": {
+                                    "$ref": "#/definitions/entity_conditions"
+                                },
                                 "item": {
                                     "$ref": "./shared/predicate.json#/definitions/item",
                                     "title": "The item enchanted"
@@ -411,10 +543,18 @@
                             "description": "This criteria will be checked whenever the player moves"
                         },
                         "conditions": {
-                            "additionalProperties": false,
                             "title": "The block to check",
                             "description": "The block which was entered to check the trigger",
-                            "$ref": "./shared/predicate.json#/definitions/block"
+                            "allOf": [
+                                {
+                                    "$ref": "./shared/predicate.json#/definitions/block"
+                                }
+                            ],
+                            "properties": {
+                                "player": {
+                                    "$ref": "#/definitions/entity_conditions"
+                                }
+                            }
                         }
                     }
                 },
@@ -435,6 +575,9 @@
                             "description": "All of these conditions must pass for the criteria to be activated",
                             "type": "object",
                             "properties": {
+                                "player": {
+                                    "$ref": "#/definitions/entity_conditions"
+                                },
                                 "damage": {
                                     "$ref": "./shared/predicate.json#/definitions/damage",
                                     "title": "The damage taken"
@@ -460,12 +603,22 @@
                             "description": "All of these conditions must pass for the criteria to be activated",
                             "type": "object",
                             "properties": {
+                                "player": {
+                                    "$ref": "#/definitions/entity_conditions"
+                                },
                                 "damage": {
                                     "$ref": "./shared/predicate.json#/definitions/damage",
                                     "title": "The damage taken"
                                 },
                                 "entity": {
-                                    "$ref": "./shared/predicate.json#/definitions/entity"
+                                    "oneOf": [
+                                        {
+                                            "$ref": "./shared/predicate.json#/definitions/entity"
+                                        },
+                                        {
+                                            "$ref": "#/definitions/entity_conditions"
+                                        }
+                                    ]
                                 }
                             }
                         }
@@ -484,10 +637,18 @@
                             "description": "This criteria will be checked whenever the player kills or is killed by an entity"
                         },
                         "conditions": {
-                            "additionalProperties": false,
                             "title": "The death object",
                             "description": "The conditions object is a direct reference to a death object",
-                            "$ref": "./shared/predicate.json#/definitions/death"
+                            "allOf": [
+                                {
+                                    "$ref": "./shared/predicate.json#/definitions/death"
+                                }
+                            ],
+                            "properties": {
+                                "player": {
+                                    "$ref": "#/definitions/entity_conditions"
+                                }
+                            }
                         }
                     }
                 },
@@ -497,11 +658,99 @@
                         "trigger": {
                             "type": "string",
                             "enum": [
-                                "minecraft:impossible",
-                                "minecraft:tick"
+                                "minecraft:filled_bucket"
+                            ]
+                        },
+                        "conditions": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "title": "Required conditions",
+                            "description": "All of these conditions must pass for the criteria to be activated",
+                            "properties": {
+                                "player": {
+                                    "$ref": "#/definitions/entity_conditions"
+                                },
+                                "item": {
+                                    "$ref": "./shared/predicate.json#/definitions/item"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "additionalProperties": false,
+                    "properties": {
+                        "trigger": {
+                            "type": "string",
+                            "enum": [
+                                "minecraft:fishing_rod_hooked"
+                            ]
+                        },
+                        "conditions": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "title": "Required conditions",
+                            "description": "All of these conditions must pass for the criteria to be activated",
+                            "properties": {
+                                "player": {
+                                    "$ref": "#/definitions/entity_conditions"
+                                },
+                                "entity": {
+                                    "oneOf": [
+                                        {
+                                            "$ref": "./shared/predicate.json#/definitions/entity"
+                                        },
+                                        {
+                                            "$ref": "#/definitions/entity_conditions"
+                                        }
+                                    ]
+                                },
+                                "item": {
+                                    "$ref": "./shared/predicate.json#/definitions/item"
+                                },
+                                "rod": {
+                                    "$ref": "./shared/predicate.json#/definitions/item"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "additionalProperties": false,
+                    "properties": {
+                        "trigger": {
+                            "type": "string",
+                            "enum": [
+                                "minecraft:hero_of_the_village"
+                            ]
+                        },
+                        "conditions": {
+                            "type": "object",
+                            "title": "Required conditions",
+                            "description": "All of these conditions must pass for the criteria to be activated",
+                            "allOf": [
+                                {
+                                    "$ref": "./shared/predicate.json#/definitions/location"
+                                }
                             ],
-                            "title": "Conditionless criteria",
-                            "description": "The impossible trigger can be only granted with a command, the tick trigger is given once each tick"
+                            "properties": {
+                                "player": {
+                                    "$ref": "#/definitions/entity_conditions"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "additionalProperties": false,
+                    "properties": {
+                        "trigger": {
+                            "type": "string",
+                            "enum": [
+                                "minecraft:impossible"
+                            ],
+                            "title": "Impossible trigger",
+                            "description": "The impossible trigger can be only granted with a command"
                         }
                     }
                 },
@@ -522,6 +771,9 @@
                             "description": "All of these conditions must pass for the criteria to be activated",
                             "type": "object",
                             "properties": {
+                                "player": {
+                                    "$ref": "#/definitions/entity_conditions"
+                                },
                                 "slots": {
                                     "additionalProperties": false,
                                     "properties": {
@@ -569,6 +821,9 @@
                             "description": "All of these conditions must pass for the criteria to be activated",
                             "type": "object",
                             "properties": {
+                                "player": {
+                                    "$ref": "#/definitions/entity_conditions"
+                                },
                                 "item": {
                                     "$ref": "./shared/predicate.json#/definitions/item",
                                     "title": "The item",
@@ -604,6 +859,9 @@
                             "description": "All of these conditions must pass for the criteria to be activated",
                             "type": "object",
                             "properties": {
+                                "player": {
+                                    "$ref": "#/definitions/entity_conditions"
+                                },
                                 "duration": {
                                     "$ref": "./shared/range.json",
                                     "title": "Time applied",
@@ -630,10 +888,18 @@
                             "description": "This criteria will be checked whenever the player sleeps (for \"slept_in_bed\"), or once every 20 ticks (\"location\")"
                         },
                         "conditions": {
-                            "additionalProperties": false,
                             "title": "Location of the player",
                             "description": "The location of the player at the time of checking (for \"slept_in_bed\" this is just after they went to sleep)",
-                            "$ref": "./shared/predicate.json#/definitions/location"
+                            "allOf": [
+                                {
+                                    "$ref": "./shared/predicate.json#/definitions/location"
+                                }
+                            ],
+                            "properties": {
+                                "player": {
+                                    "$ref": "#/definitions/entity_conditions"
+                                }
+                            }
                         }
                     }
                 },
@@ -653,6 +919,9 @@
                             "description": "All of these conditions must pass for the criteria to be activated",
                             "type": "object",
                             "properties": {
+                                "player": {
+                                    "$ref": "#/definitions/entity_conditions"
+                                },
                                 "entered": {
                                     "$ref": "./shared/predicate.json#/definitions/location",
                                     "title": "Entering the nether",
@@ -684,7 +953,6 @@
                             "description": "This criteria will be checked whenever the player places a block"
                         },
                         "conditions": {
-                            "additionalProperties": false,
                             "title": "Required conditions",
                             "description": "The placed block",
                             "allOf": [
@@ -703,8 +971,9 @@
                                     "title": "Location of block",
                                     "description": "The location at which the block is placed"
                                 },
-                                "block": {},
-                                "state": {}
+                                "player": {
+                                    "$ref": "#/definitions/entity_conditions"
+                                }
                             }
                         }
                     }
@@ -726,6 +995,9 @@
                             "description": "All of these conditions must pass for the criteria to be activated",
                             "type": "object",
                             "properties": {
+                                "player": {
+                                    "$ref": "#/definitions/entity_conditions"
+                                },
                                 "recipe": {
                                     "type": "string",
                                     "title": "The name of the recipe",
@@ -753,10 +1025,77 @@
                             "description": "All of these conditions must pass for the criteria to be activated",
                             "type": "object",
                             "properties": {
+                                "player": {
+                                    "$ref": "#/definitions/entity_conditions"
+                                },
                                 "entity": {
-                                    "$ref": "./shared/predicate.json#/definitions/entity",
-                                    "title": "The entity summmoned"
+                                    "title": "The entity summmoned",
+                                    "oneOf": [
+                                        {
+                                            "$ref": "./shared/predicate.json#/definitions/entity"
+                                        },
+                                        {
+                                            "$ref": "#/definitions/entity_conditions"
+                                        }
+                                    ]
                                 }
+                            }
+                        }
+                    }
+                },
+                {
+                    "additionalProperties": false,
+                    "properties": {
+                        "trigger": {
+                            "type": "string",
+                            "enum": [
+                                "minecraft:target_hit‌"
+                            ]
+                        },
+                        "conditions": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "title": "Required conditions",
+                            "description": "All of these conditions must pass for the criteria to be activated",
+                            "properties": {
+                                "player": {
+                                    "$ref": "#/definitions/entity_conditions"
+                                },
+                                "signal_strength": {
+                                    "type": "integer"
+                                },
+                                "projectile": {
+                                    "oneOf": [
+                                        {
+                                            "$ref": "./shared/predicate.json#/definitions/entity"
+                                        },
+                                        {
+                                            "$ref": "#/definitions/entity_conditions"
+                                        }
+                                    ]
+                                },
+                                "shooter": {
+                                    "$ref": "./shared/predicate.json#/definitions/entity"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "additionalProperties": false,
+                    "properties": {
+                        "trigger": {
+                            "type": "string",
+                            "enum": [
+                                "minecraft:tick"
+                            ],
+                            "title": "Conditionless criteria",
+                            "description": "The tick trigger is given once each tick"
+                        },
+                        "conditions": {
+                            "additionalProperties": false,
+                            "player": {
+                                "$ref": "#/definitions/entity_conditions"
                             }
                         }
                     }
@@ -778,6 +1117,9 @@
                             "description": "All of these conditions must pass for the criteria to be activated",
                             "type": "object",
                             "properties": {
+                                "player": {
+                                    "$ref": "#/definitions/entity_conditions"
+                                },
                                 "distance": {
                                     "$ref": "./shared/range.json",
                                     "title": "Distance from player to stronghold",
@@ -804,9 +1146,19 @@
                             "description": "All of these conditions must pass for the criteria to be activated",
                             "type": "object",
                             "properties": {
+                                "player": {
+                                    "$ref": "#/definitions/entity_conditions"
+                                },
                                 "villager": {
-                                    "$ref": "./shared/predicate.json#/definitions/entity",
-                                    "title": "The villager traded with"
+                                    "title": "The villager traded with",
+                                    "oneOf": [
+                                        {
+                                            "$ref": "./shared/predicate.json#/definitions/entity"
+                                        },
+                                        {
+                                            "$ref": "#/definitions/entity_conditions"
+                                        }
+                                    ]
                                 },
                                 "item": {
                                     "$ref": "./shared/predicate.json#/definitions/item",
@@ -817,6 +1169,14 @@
                     }
                 }
             ]
+        },
+        "entity_conditions": {
+            "type": "array",
+            "title": "Conditions",
+            "description": "The conditions that the entity must pass",
+            "items": {
+                "$ref": "./predicate.json"
+            }
         }
     }
 }
