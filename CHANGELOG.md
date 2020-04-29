@@ -1,3 +1,8 @@
+# [v2.0.11](https://github.com/SPGoding/datapack-json/compare/v2.0.10...v2.0.11) (2020-04-29)
+
+## 🐛 Bug Fixes
+- [`b9f64cc`](https://github.com/SPGoding/datapack-json/commit/b9f64cc)  Fix not supporting new advancement format
+
 # [v2.0.10](https://github.com/SPGoding/datapack-json/compare/v2.0.9...v2.0.10) (2020-04-26)
 
 ## 🐛 Bug Fixes
