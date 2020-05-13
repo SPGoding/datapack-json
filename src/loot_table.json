@@ -716,7 +716,7 @@
                                     "type": "string",
                                     "parser": "Identity",
                                     "params": {
-                                        "registry": "$lootTables"
+                                        "registry": "$loot_tables"
                                     }
                                 },
                                 "seed": {
@@ -773,7 +773,7 @@
                             "type": "string",
                             "parser": "Identity",
                             "params": {
-                                "registry": "$lootTables"
+                                "registry": "$loot_tables"
                             },
                             "title": "Loot table",
                             "description": "The loot table to be given"

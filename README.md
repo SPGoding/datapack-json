@@ -44,12 +44,12 @@ A parser used to validate namespaced IDs.
 - `registry`: (string) Optional. The registry of this namespaced ID. Can be one of:
     - `$advancements`: All available advancements.
     - `$functions`: All available functions.
-    - `$lootTables`: All available loot tables.
+    - `$loot_tables`: All available loot tables.
     - `$predicates`: All available predicates.
     - `$recipes`: All available recipes.
     - `$storages`: All available recipes.
     - `$tags/blocks`: All available block tags.
-    - `$tags/entityTypes`: All available entity type tags.
+    - `$tags/entity_types`: All available entity type tags.
     - `$tags/fluids`: All available fluid tags.
     - `$tags/functions`: All available function tags.
     - `$tags/items`: All available item tags.
