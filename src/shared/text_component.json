@@ -359,6 +359,14 @@
                         }
                     ]
                 },
+                "font": {
+                    "type": "string",
+                    "parser": "Identity",
+                    "params": {
+                        "allowUnknownValue": true
+                    },
+                    "title": "The font used for this text"
+                },
                 "bold": {
                     "title": "Whether to have the text bold",
                     "type": "boolean"
