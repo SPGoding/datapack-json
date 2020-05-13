@@ -130,7 +130,7 @@
                         "type": "string",
                         "parser": "Identity",
                         "params": {
-                            "registry": "$lootTables"
+                            "registry": "$loot_tables"
                         },
                         "title": "A single loot table"
                     }
@@ -849,6 +849,37 @@
                         "trigger": {
                             "type": "string",
                             "enum": [
+                                "minecraft:item_used_on_block"
+                            ],
+                            "title": "Item used on block"
+                        },
+                        "conditions": {
+                            "additionalProperties": false,
+                            "title": "Required conditions",
+                            "description": "All of these conditions must pass for the criteria to be activated",
+                            "type": "object",
+                            "properties": {
+                                "player": {
+                                    "$ref": "#/definitions/entity_conditions"
+                                },
+                                "location": {
+                                    "$ref": "./shared/predicate.json#/definitions/location",
+                                    "description": "The center of the block where the item was used"
+                                },
+                                "item": {
+                                    "$ref": "./shared/predicate.json#/definitions/item",
+                                    "description": "The item that was used on the block"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "additionalProperties": false,
+                    "properties": {
+                        "trigger": {
+                            "type": "string",
+                            "enum": [
                                 "minecraft:levitation"
                             ],
                             "description": "This criteria will be checked whenever the player is levitating"
@@ -984,6 +1015,37 @@
                         "trigger": {
                             "type": "string",
                             "enum": [
+                                "minecraft:player_generates_container_loot"
+                            ],
+                            "title": "Player generates container loot"
+                        },
+                        "conditions": {
+                            "additionalProperties": false,
+                            "title": "Required conditions",
+                            "description": "All of these conditions must pass for the criteria to be activated",
+                            "type": "object",
+                            "properties": {
+                                "player": {
+                                    "$ref": "#/definitions/entity_conditions"
+                                },
+                                "loot_table": {
+                                    "type": "string",
+                                    "parser": "Identity",
+                                    "params": {
+                                        "registry": "$loot_tables"
+                                    },
+                                    "description": "The loot table that was populated"
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "additionalProperties": false,
+                    "properties": {
+                        "trigger": {
+                            "type": "string",
+                            "enum": [
                                 "minecraft:recipe_unlocked"
                             ],
                             "title": "Unlock recipe",
@@ -1075,7 +1137,52 @@
                                     ]
                                 },
                                 "shooter": {
-                                    "$ref": "./shared/predicate.json#/definitions/entity"
+                                    "oneOf": [
+                                        {
+                                            "$ref": "./shared/predicate.json#/definitions/entity"
+                                        },
+                                        {
+                                            "$ref": "#/definitions/entity_conditions"
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "additionalProperties": false,
+                    "properties": {
+                        "trigger": {
+                            "type": "string",
+                            "enum": [
+                                "minecraft:thrown_item_picked_up_by_entity"
+                            ],
+                            "title": "Thrown item picked up by entity"
+                        },
+                        "conditions": {
+                            "additionalProperties": false,
+                            "title": "Required conditions",
+                            "description": "All of these conditions must pass for the criteria to be activated",
+                            "type": "object",
+                            "properties": {
+                                "player": {
+                                    "$ref": "#/definitions/entity_conditions"
+                                },
+                                "item": {
+                                    "$def": "./shared/predicate.json#/definitions/item",
+                                    "description": "The thrown item that was picked up by the entity"
+                                },
+                                "entity": {
+                                    "description": "The entity that picked up the thrown item",
+                                    "oneOf": [
+                                        {
+                                            "$ref": "./shared/predicate.json#/definitions/entity"
+                                        },
+                                        {
+                                            "$ref": "#/definitions/entity_conditions"
+                                        }
+                                    ]
                                 }
                             }
                         }
@@ -1089,7 +1196,7 @@
                             "enum": [
                                 "minecraft:tick"
                             ],
-                            "title": "Conditionless criteria",
+                            "title": "Tick",
                             "description": "The tick trigger is given once each tick"
                         },
                         "conditions": {
