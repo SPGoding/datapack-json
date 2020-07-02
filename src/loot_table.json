@@ -77,7 +77,7 @@
             "title": "Conditions",
             "description": "The conditions that must pass for this pool/entry/function to be used",
             "items": {
-                "$ref": "./predicate.json"
+                "$ref": "./shared/loot_table_condition.json"
             }
         },
         "entity": {
