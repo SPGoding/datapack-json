@@ -5,12 +5,12 @@
     "title": "Root tag",
     "oneOf": [
         {
-            "$ref": "./shared/loot_table_condition"
+            "$ref": "./shared/loot_table_condition.json"
         },
         {
             "type": "array",
             "items": {
-                "$ref": "./shared/loot_table_condition"
+                "$ref": "./shared/loot_table_condition.json"
             }
         }
     ]
