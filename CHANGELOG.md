@@ -1,3 +1,12 @@
+# [v2.0.12](https://github.com/SPGoding/datapack-json/compare/v2.0.11...v2.0.12) (2020-07-06)
+
+## 🐛 Bug Fixes
+- [`397215b`](https://github.com/SPGoding/datapack-json/commit/397215b)  Fix pack.mcmeta (Issues: [`#40`](https://github.com/SPGoding/datapack-json/issues/40))
+- [`1630907`](https://github.com/SPGoding/datapack-json/commit/1630907)  Fix not supporting font in text components (Issues: [`#41`](https://github.com/SPGoding/datapack-json/issues/41))
+- [`65e6c7a`](https://github.com/SPGoding/datapack-json/commit/65e6c7a)  Update advancement to 20w20a 
+- [`10346c7`](https://github.com/SPGoding/datapack-json/commit/10346c7)  Change camelCase to snake_case for ID registry 
+- [`9defcd7`](https://github.com/SPGoding/datapack-json/commit/9defcd7)  Fix not supporting array predicates
+
 # [v2.0.11](https://github.com/SPGoding/datapack-json/compare/v2.0.10...v2.0.11) (2020-04-29)
 
 ## 🐛 Bug Fixes
