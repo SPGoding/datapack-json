@@ -20,7 +20,7 @@
                     "title": "Scores to check",
                     "description": "The name of each sub-object is the score to check, it is either a number or a range",
                     "additionalProperties": {
-                        "$ref": "./shared/range.json"
+                        "$ref": "./range.json"
                     }
                 }
             }
@@ -39,7 +39,7 @@
                     "$ref": "#/definitions/entity"
                 },
                 "predicate": {
-                    "$ref": "./shared/predicate.json#/definitions/entity"
+                    "$ref": "./predicate.json#/definitions/entity"
                 }
             }
         },
@@ -160,7 +160,7 @@
                     "description": "Checks damage source"
                 },
                 "predicate": {
-                    "$ref": "./shared/predicate.json#/definitions/damage"
+                    "$ref": "./predicate.json#/definitions/damage"
                 }
             }
         },
@@ -174,7 +174,7 @@
                     "description": "Checks location"
                 },
                 "predicate": {
-                    "$ref": "./shared/predicate.json#/definitions/location"
+                    "$ref": "./predicate.json#/definitions/location"
                 },
                 "offsetX": {
                     "type": "number",
@@ -200,7 +200,7 @@
                     "description": "Checks tool (available for block breaking and fishing)"
                 },
                 "predicate": {
-                    "$ref": "./shared/predicate.json#/definitions/item"
+                    "$ref": "./predicate.json#/definitions/item"
                 }
             }
         },
@@ -253,7 +253,7 @@
                     "title": "Checks the time"
                 },
                 "value": {
-                    "$ref": "./shared/range.json",
+                    "$ref": "./range.json",
                     "title": "Range of accepted values"
                 },
                 "period": {
