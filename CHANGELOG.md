@@ -1,3 +1,8 @@
+# [v2.0.13](https://github.com/SPGoding/datapack-json/compare/v2.0.12...v2.0.13) (2020-07-06)
+
+## 🐛 Bug Fixes
+- [`21c6655`](https://github.com/SPGoding/datapack-json/commit/21c6655)  Fix wrong file path
+
 # [v2.0.12](https://github.com/SPGoding/datapack-json/compare/v2.0.11...v2.0.12) (2020-07-06)
 
 ## 🐛 Bug Fixes
