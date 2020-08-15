@@ -4,9 +4,22 @@
 # DEPRECATED
 # DEPRECATED
 
-**THIS PACKAGE IS NOW DEPRECATED, PLEASE SEE [HERE](https://github.com/misode/minecraft-schemas) FOR AN ALTERNATIVE.**
+- **THIS PACKAGE IS NOW DEPRECATED, PLEASE SEE [HERE](https://github.com/misode/minecraft-schemas) FOR AN ALTERNATIVE.**
+- **THIS PACKAGE IS NOW DEPRECATED, PLEASE SEE [HERE](https://github.com/misode/minecraft-schemas) FOR AN ALTERNATIVE.**
+- **THIS PACKAGE IS NOW DEPRECATED, PLEASE SEE [HERE](https://github.com/misode/minecraft-schemas) FOR AN ALTERNATIVE.**
+- **THIS PACKAGE IS NOW DEPRECATED, PLEASE SEE [HERE](https://github.com/misode/minecraft-schemas) FOR AN ALTERNATIVE.**
+- **THIS PACKAGE IS NOW DEPRECATED, PLEASE SEE [HERE](https://github.com/misode/minecraft-schemas) FOR AN ALTERNATIVE.**
 
-**This package is now deprecated, please see [here](https://github.com/misode/minecraft-schemas) for an alternative.**
+- **This package is now deprecated, please see [here](https://github.com/misode/minecraft-schemas) for an alternative.**
+- **This package is now deprecated, please see [here](https://github.com/misode/minecraft-schemas) for an alternative.**
+- **This package is now deprecated, please see [here](https://github.com/misode/minecraft-schemas) for an alternative.**
+- **This package is now deprecated, please see [here](https://github.com/misode/minecraft-schemas) for an alternative.**
+- **This package is now deprecated, please see [here](https://github.com/misode/minecraft-schemas) for an alternative.**
+- **This package is now deprecated, please see [here](https://github.com/misode/minecraft-schemas) for an alternative.**
+- **This package is now deprecated, please see [here](https://github.com/misode/minecraft-schemas) for an alternative.**
+- **This package is now deprecated, please see [here](https://github.com/misode/minecraft-schemas) for an alternative.**
+- **This package is now deprecated, please see [here](https://github.com/misode/minecraft-schemas) for an alternative.**
+- **This package is now deprecated, please see [here](https://github.com/misode/minecraft-schemas) for an alternative.**
 
 [![CircleCI](https://img.shields.io/circleci/build/github/SPGoding/datapack-json.svg?logo=circleci&style=flat-square)](https://circleci.com/gh/SPGoding/datapack-json)
 [![npm](https://img.shields.io/npm/v/datapack-json.svg?logo=npm&style=flat-square)](https://npmjs.com/package/datapack-json)
