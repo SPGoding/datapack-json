@@ -5,9 +5,10 @@
     "engines": {
         "vscode": "^1.22.0"
     },
+    "main": "src/extension.js",
     "license": "MIT",
     "displayName": "Datapack Helper Plus (JSON)",
-    "description": "Provides JSON validations for Minecraft datapacks.",
+    "description": "DEPRECATED",
     "categories": [
         "Linters",
         "Other"
@@ -20,6 +21,7 @@
     "devDependencies": {
         "@semantic-release/changelog": "^5.0.0",
         "@semantic-release/git": "^9.0.0",
+        "@types/vscode": "^1.48.0",
         "gitmoji-cli": "^3.0.0",
         "semantic-release": "^17.0.0",
         "semantic-release-gitmoji": "^1.3.0",
@@ -33,50 +35,11 @@
                     "mcmeta"
                 ]
             }
-        ],
-        "jsonValidation": [
-            {
-                "fileMatch": "pack.mcmeta",
-                "url": "./src/pack.mcmeta.json"
-            },
-            {
-                "fileMatch": "data/*/advancements/*.json",
-                "url": "./src/advancement.json"
-            },
-            {
-                "fileMatch": "data/*/loot_tables/*.json",
-                "url": "./src/loot_table.json"
-            },
-            {
-                "fileMatch": "data/*/predicates/*.json",
-                "url": "./src/predicate.json"
-            },
-            {
-                "fileMatch": "data/*/recipes/*.json",
-                "url": "./src/recipe.json"
-            },
-            {
-                "fileMatch": "data/*/tags/blocks/*.json",
-                "url": "./src/tags/block.json"
-            },
-            {
-                "fileMatch": "data/*/tags/entity_types/*.json",
-                "url": "./src/tags/entity_type.json"
-            },
-            {
-                "fileMatch": "data/*/tags/fluids/*.json",
-                "url": "./src/tags/fluid.json"
-            },
-            {
-                "fileMatch": "data/*/tags/functions/*.json",
-                "url": "./src/tags/function.json"
-            },
-            {
-                "fileMatch": "data/*/tags/items/*.json",
-                "url": "./src/tags/item.json"
-            }
         ]
     },
+    "activationEvents": [
+        "onLanguage:json"
+    ],
     "icon": "icon.png",
     "scripts": {
         "commit": "gitmoji -c",
